@@ -1,0 +1,83 @@
+﻿@page "/cinema/{cinemaId:int}"
+
+@using OnlineTickets.Client.Services.MovieServices
+@inject ICinemaService CinemaService
+@inject IMovieService MovieService
+
+@if(cinema is not null)
+{
+    <h3>@cinema.CinemaName Details</h3>
+
+    <div class="media my-3">
+        <div class="media-img-wrapper mr-2">
+            <a href="/cinemas">
+                <img class="media-img" src="@cinema.CinemaLogo" alt="@cinema.CinemaName" />
+            </a>
+        </div>
+        <div class="media-body">
+            <a href="/cinemas">
+                <h4>@cinema.CinemaName</h4>
+            </a>
+            <p>@cinema.CinemaDescription</p>
+
+            <h5><b>Capacity: </b>@cinema.Capacity</h5>
+            <h5 class="my-2"><b>Movies in @cinema.CinemaName</b></h5>
+            <ul class="list-unstyled">
+                @foreach (var movie in cinemaMovies)
+                {
+                    <li class="media my-3">
+                        <div class="media-img-wrapper mr-2">
+                            <a href="/movie/@movie.MovieId">
+                                <img class="media-img" src="@movie.MovieImageUrl" alt="@movie.MovieName" />
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <a href="/movie/@movie.MovieId">
+                                <h4>@movie.MovieName</h4>
+                            </a>
+                            <h5>@movie.MovieCategory</h5>
+                            <p>@movie.MovieDescription</p>
+                            <h5>@movie.StartDate.ToShortDateString()</h5>
+                            <h5>@movie.EndDate.ToShortDateString()</h5>
+                            @if (movie.StartDate <= DateTime.Now)
+                            {
+                                <h5>available</h5>
+                            }
+                            <h5>upcoming</h5>
+
+                            <h5>$@movie.Price</h5>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+}
+
+
+
+@code {
+    [Parameter]
+    public int CinemaId{ get; set; }
+
+    Cinema? cinema;
+    List<Movie> cinemaMovies = new List<Movie>();
+
+    protected override void OnInitialized()
+    {
+        CinemaService.GetCinemasList();
+        
+        cinema = CinemaService.Cinemas.FirstOrDefault(c => c.CinemaId == CinemaId);
+       
+        MovieService.GetMoviesList();
+        
+        foreach (var movie in MovieService.Movies)
+        {
+            if (movie.CinemaId == CinemaId)
+            {
+                cinemaMovies.Add(movie);
+            }
+        }
+    }
+
+}

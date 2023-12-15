@@ -1,0 +1,40 @@
+﻿@page "/producers"
+
+@using OnlineTickets.Client.Services.MovieServices
+@inject IProducerService ProduserService
+
+<h3>Producers</h3>
+
+<div class="row">
+    @foreach (var producer in ProduserService.Producers)
+    {
+        <div class="col-md-4 border-primary mb-2">
+            <div class="card mb-2" style="width:200px; height:350px;">
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div class="card-header text-white bg-info">
+                            <p class="card-text">
+                                <h5 class=" card-title">
+                                    <a href="/producer/@producer.ProducerId" class="text-white">
+                                        @producer.ProducerName</a>
+                                </h5>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="/producer/@producer.ProducerId">
+                            <img class="media-img" src="@producer.ProducerProfilePictureURL" alt="@producer.ProducerName" style="width:200px;" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        ProduserService.GetProducersList();
+    }
+}

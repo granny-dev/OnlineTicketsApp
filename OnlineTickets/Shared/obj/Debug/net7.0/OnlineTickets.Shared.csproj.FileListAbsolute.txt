@@ -1,0 +1,11 @@
+D:\ProjectsL\OnlineTicketsApp\OnlineTickets\Shared\bin\Debug\net7.0\OnlineTickets.Shared.deps.json
+D:\ProjectsL\OnlineTicketsApp\OnlineTickets\Shared\bin\Debug\net7.0\OnlineTickets.Shared.dll
+D:\ProjectsL\OnlineTicketsApp\OnlineTickets\Shared\bin\Debug\net7.0\OnlineTickets.Shared.pdb
+D:\ProjectsL\OnlineTicketsApp\OnlineTickets\Shared\obj\Debug\net7.0\OnlineTickets.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\ProjectsL\OnlineTicketsApp\OnlineTickets\Shared\obj\Debug\net7.0\OnlineTickets.Shared.AssemblyInfoInputs.cache
+D:\ProjectsL\OnlineTicketsApp\OnlineTickets\Shared\obj\Debug\net7.0\OnlineTickets.Shared.AssemblyInfo.cs
+D:\ProjectsL\OnlineTicketsApp\OnlineTickets\Shared\obj\Debug\net7.0\OnlineTickets.Shared.csproj.CoreCompileInputs.cache
+D:\ProjectsL\OnlineTicketsApp\OnlineTickets\Shared\obj\Debug\net7.0\OnlineTickets.Shared.dll
+D:\ProjectsL\OnlineTicketsApp\OnlineTickets\Shared\obj\Debug\net7.0\refint\OnlineTickets.Shared.dll
+D:\ProjectsL\OnlineTicketsApp\OnlineTickets\Shared\obj\Debug\net7.0\OnlineTickets.Shared.pdb
+D:\ProjectsL\OnlineTicketsApp\OnlineTickets\Shared\obj\Debug\net7.0\ref\OnlineTickets.Shared.dll

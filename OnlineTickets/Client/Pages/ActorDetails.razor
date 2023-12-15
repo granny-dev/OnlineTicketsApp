@@ -1,0 +1,38 @@
+﻿@page "/actor/{actorId:int}"
+
+@using OnlineTickets.Client.Services.MovieServices
+@inject IActorService ActorService
+
+@if(actor is not null)
+{
+    <h3>@actor.ActorName Details</h3>
+
+    <div class="media my-3">
+        <div class="media-img-wrapper mr-2">
+            <a href="/actors">
+                <img class="media-img" src="@actor.ActorProfilePictureURL" alt="@actor.ActorName" />
+            </a>
+        </div>
+        <div class="media-body">
+            <a href="/actors">
+                <h4>@actor.ActorName</h4>
+            </a>
+            <p>@actor.ActorBiography</p>
+        </div>
+    </div>
+}
+
+
+
+@code {
+    [Parameter]
+    public int ActorId{ get; set; }
+    Actor? actor;
+
+    protected override void OnInitialized()
+    {
+        ActorService.GetActorsList();
+
+        actor = ActorService.Actors.FirstOrDefault(a => a.ActorId == ActorId);
+    }
+}

@@ -1,0 +1,72 @@
+﻿@page "/producer/{producerId:int}"
+
+@using OnlineTickets.Client.Services.MovieServices
+@inject IProducerService ProducerService
+@inject IMovieService MovieService
+
+@if(producer is not null)
+{
+    <h3>@producer.ProducerName Details</h3>
+
+    <div class="media my-3">
+        <div class="media-img-wrapper mr-2">
+            <a href="/producers">
+                <img class="media-img" src="@producer.ProducerProfilePictureURL" alt="@producer.ProducerName" />
+            </a>
+        </div>
+        <div class="media-body">
+            <a href="/producers">
+                <h4>@producer.ProducerName</h4>
+            </a>
+            <p>@producer.ProducerBiography</p>
+            <h5 class="my-2"><b>@producer.ProducerName`s Movies</b></h5>
+            <ul class="list-unstyled">
+                @foreach (var movie in producerMovies)
+                {
+                    <li class="media my-3">
+                        <div class="media-img-wrapper mr-2">
+                            <a href="/movie/@movie.MovieId">
+                                <img class="media-img" src="@movie.MovieImageUrl" alt="@movie.MovieName" />
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <a href="/movie/@movie.MovieId">
+                                <h4>@movie.MovieName</h4>
+                            </a>
+                            <h5>@movie.MovieCategory</h5>
+                            <p>@movie.MovieDescription</p>
+
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+}
+
+
+
+@code {
+    [Parameter]
+    public int ProducerId{ get; set; }
+
+    Producer? producer;
+    List<Movie> producerMovies = new List<Movie>();
+
+    protected override void OnInitialized()
+    {
+        ProducerService.GetProducersList();
+
+        producer = ProducerService.Producers.FirstOrDefault(p => p.ProducerId == ProducerId);
+
+        MovieService.GetMoviesList();
+
+        foreach (var movie in MovieService.Movies)
+        {
+            if (movie.ProducerId == ProducerId)
+            {
+                producerMovies.Add(movie);
+            }
+        }
+    }
+}

@@ -1,0 +1,46 @@
+﻿@page "/cinemas"
+
+@using OnlineTickets.Client.Services.MovieServices
+@inject ICinemaService CinemaService
+
+
+<h3>Cinemas</h3>
+
+
+<div class="row">
+    @foreach (var cinema in CinemaService.Cinemas)
+    {
+        <div class="col-md-4 border-primary mb-2">
+            <div class="card mb-2" style="width:200px; height:250px;">
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div class="card-header text-white bg-info">
+                            <p class="card-text">
+                                <h5 class=" card-title">
+                                  <a href="/cinema/@cinema.CinemaId" class="text-white">@cinema.CinemaName</a>
+                                </h5>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <a href="/cinema/@cinema.CinemaId">
+                            <img class="media-img" src="@cinema.CinemaLogo" alt="@cinema.CinemaName" style="width:200px;" />
+                        </a>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card-body">
+                            <p class="card-text"><b>Capacity: </b>@cinema.Capacity</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    protected override void OnInitialized()
+    {
+        CinemaService.GetCinemasList();
+    }
+}

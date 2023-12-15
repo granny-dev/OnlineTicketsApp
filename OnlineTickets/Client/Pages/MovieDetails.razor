@@ -1,0 +1,90 @@
+﻿@page "/movie/{movieId:int}"
+
+@using OnlineTickets.Client.Services.MovieServices
+@inject IMovieService MovieService
+@inject IActorService ActorService
+
+@if(movie is not null)
+{
+    <h3>@movie.MovieName Details</h3>
+
+    <div class="media my-2">
+        <div class="media-img-wrapper mr-2">
+            <a href="">
+                <img class="media-img" src="@movie.MovieImageUrl" alt="@movie.MovieName" />
+            </a>
+        </div>
+        <div class="media-body">
+            <a href="">
+                <h4>@movie.MovieName</h4>
+            </a>
+            <h5>@movie.MovieCategory</h5>
+            <p>@movie.MovieDescription</p>
+            <a href="/producer/@movie.ProducerId">
+                <h5><b>Producer: </b>@movie.ProducerName</h5>
+            </a>
+            <a href="/cinema/@movie.CinemaId">
+                <h5><b>Cinema: </b>@movie.CinemaName</h5>
+            </a>
+            <h5>@movie.StartDate.ToShortDateString()</h5>
+            <h5>@movie.EndDate.ToShortDateString()</h5>
+            @if (movie.StartDate <= DateTime.Now)
+            {
+                <h5>available</h5>
+            }
+            <h5>upcoming</h5>
+
+            <h5><b>Price: </b>$@movie.Price</h5>
+            <h5 class="my-2"><b>Actors in @movie.MovieName</b></h5>
+            <ul class="list-unstyled">
+                @foreach (var actor in movieActors)
+                {
+                    <li class="media my-3">
+                        <div class="media-img-wrapper mr-2">
+                            <a href="/actor/@actor.ActorId">
+                                <img class="media-img" src="@actor.ActorProfilePictureURL" alt="@actor.ActorName" />
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <a href="/actor/@actor.ActorId">
+                                <h4>@actor.ActorName</h4>
+                            </a>
+                            <p>@actor.ActorBiography</p>
+                        </div>
+                    </li>
+                }
+            </ul>
+
+        </div>
+    </div>
+}
+
+
+
+@code {
+    [Parameter]
+    public int MovieId{ get; set; }
+
+    Movie? movie;
+   
+
+    List<Actor> movieActors = new List<Actor>();
+
+    protected override void OnInitialized()
+    {
+        MovieService.GetMoviesList();
+
+        movie = MovieService.Movies.FirstOrDefault(m => m.MovieId == MovieId);
+
+        ActorService.GetActorsList();
+
+        foreach (var actor in ActorService.Actors)
+        {
+            if (actor.MovieId == MovieId)
+            {
+                movieActors.Add(actor);
+            }
+        }
+
+    }
+}
