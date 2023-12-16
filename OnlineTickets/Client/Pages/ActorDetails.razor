@@ -29,9 +29,9 @@
     public int ActorId{ get; set; }
     Actor? actor;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        ActorService.GetActorsList();
+        await ActorService.GetActorsList();
 
         actor = ActorService.Actors.FirstOrDefault(a => a.ActorId == ActorId);
     }

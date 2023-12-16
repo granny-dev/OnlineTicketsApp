@@ -53,13 +53,13 @@
     Producer? producer;
     List<Movie> producerMovies = new List<Movie>();
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        ProducerService.GetProducersList();
+        await ProducerService.GetProducersList();
 
         producer = ProducerService.Producers.FirstOrDefault(p => p.ProducerId == ProducerId);
 
-        MovieService.GetMoviesList();
+       await MovieService.GetMoviesList();
 
         foreach (var movie in MovieService.Movies)
         {

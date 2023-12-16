@@ -33,8 +33,8 @@
 </div>
 
 @code {
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        ProduserService.GetProducersList();
+        await ProduserService.GetProducersList();
     }
 }

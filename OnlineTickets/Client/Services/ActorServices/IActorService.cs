@@ -5,6 +5,6 @@ namespace OnlineTickets.Client.Services.ActorServices
     public interface IActorService
     {
         List<Actor> Actors { get; set; }
-        void GetActorsList();
+        Task<List<Actor>> GetActorsList();
     }
 }

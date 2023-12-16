@@ -63,14 +63,14 @@
     Cinema? cinema;
     List<Movie> cinemaMovies = new List<Movie>();
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        CinemaService.GetCinemasList();
-        
+        await CinemaService.GetCinemasList();
+
         cinema = CinemaService.Cinemas.FirstOrDefault(c => c.CinemaId == CinemaId);
-       
-        MovieService.GetMoviesList();
-        
+
+       await MovieService.GetMoviesList();
+
         foreach (var movie in MovieService.Movies)
         {
             if (movie.CinemaId == CinemaId)
@@ -79,5 +79,4 @@
             }
         }
     }
-
 }

@@ -69,12 +69,12 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-lOCs45frNf+D7me6lKLgUhRCdt4VwHCp9H6Ct+YWzfs=",
-      "url": "_framework\/blazor.webassembly.js"
-    },
-    {
       "hash": "sha256-mVIKw+ZE+WOueUpCvUTrwUKCw2Ge8ZQJdSKXL2N5IJQ=",
       "url": "OnlineTickets.Client.styles.css"
+    },
+    {
+      "hash": "sha256-lOCs45frNf+D7me6lKLgUhRCdt4VwHCp9H6Ct+YWzfs=",
+      "url": "_framework\/blazor.webassembly.js"
     },
     {
       "hash": "sha256-D1Cpv8dUhVhigWOZxMvQ0dgeOCRgaFoDpnRrjK\/cjRM=",
@@ -865,25 +865,25 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-y3Tj3Ny0ECUqGt3ULrELlIlOxuX9GUwt+FoEOv\/jDTU=",
+      "hash": "sha256-xrNga\/sZi0FkrPf0s6bpDywUd3yLVcxXaZr0vPQkRy4=",
       "url": "_framework\/OnlineTickets.Shared.dll"
     },
     {
-      "hash": "sha256-hLwqVUR9JcCz\/F7yQ1pyOla9ZTnrVMWU67+US1IKPLs=",
+      "hash": "sha256-1gI+GetslaHsrq5253qug61d7qaIHIqJOBtPW+mhiRs=",
       "url": "_framework\/OnlineTickets.Shared.pdb"
     },
     {
-      "hash": "sha256-E81SCtsUXGctMfRwBH27KD7HWHg5rb9nO9DCoJ+Yqus=",
+      "hash": "sha256-mTfxItNP6V+5idVtaS2qseoC7C4QK\/5p5BgdFrDe1CM=",
       "url": "_framework\/OnlineTickets.Client.dll"
     },
     {
-      "hash": "sha256-u0QjeIdMwCVR7Uq1H7Hu+kEmGUXxO4dnz+0JYWVrUi0=",
+      "hash": "sha256-UWqi0RCUQW3kPg8grd2NR9cAx701\/88bZbUn2z8tk6k=",
       "url": "_framework\/OnlineTickets.Client.pdb"
     },
     {
-      "hash": "sha256-AMBJAfsWtVsFU\/B8GbRHOctNEFm43eio2SGuS1CfXoA=",
+      "hash": "sha256-OoUTDRE7WpE1jSlcPO8JkyauSObLOSyXiu+pMqmDADw=",
       "url": "_framework\/blazor.boot.json"
     }
   ],
-  "version": "jAK6CyLv"
+  "version": "tn+Imk4\/"
 };

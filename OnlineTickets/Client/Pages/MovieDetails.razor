@@ -66,17 +66,17 @@
     public int MovieId{ get; set; }
 
     Movie? movie;
-   
+
 
     List<Actor> movieActors = new List<Actor>();
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        MovieService.GetMoviesList();
+        await MovieService.GetMoviesList();
 
         movie = MovieService.Movies.FirstOrDefault(m => m.MovieId == MovieId);
 
-        ActorService.GetActorsList();
+       await ActorService.GetActorsList();
 
         foreach (var actor in ActorService.Actors)
         {
@@ -85,6 +85,5 @@
                 movieActors.Add(actor);
             }
         }
-
     }
 }

@@ -39,8 +39,8 @@
 </div>
 
 @code {
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        CinemaService.GetCinemasList();
+        await CinemaService.GetCinemasList();
     }
 }
