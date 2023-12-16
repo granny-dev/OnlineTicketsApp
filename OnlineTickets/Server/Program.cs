@@ -1,4 +1,11 @@
 using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.EntityFrameworkCore;
+using OnlineTickets.Server.Data;
+using OnlineTickets.Server.Repositories.ActorRepositories;
+using OnlineTickets.Server.Repositories.CinemaRepositories;
+using OnlineTickets.Server.Repositories.MovieRepositiries;
+using OnlineTickets.Server.Repositories.ProducerRepositories;
+using System;
 
 namespace OnlineTickets
 {
@@ -12,6 +19,13 @@ namespace OnlineTickets
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddRazorPages();
+
+            builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("Default")));
+
+            builder.Services.AddScoped<IActorRepository, ActorRepository>();
+            builder.Services.AddScoped<ICinemaRepository, CinemaRepository>();
+            builder.Services.AddScoped<IMovieRepository, MovieRepository>();
+            builder.Services.AddScoped<IProducerRepository, ProducerRepository>();
 
             var app = builder.Build();
 

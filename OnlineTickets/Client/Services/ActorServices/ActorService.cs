@@ -23,5 +23,30 @@ namespace OnlineTickets.Client.Services.ActorServices
             }
             return Actors;
         }
+
+        public async Task<Actor> GetActorById(int id)
+        {
+            var result = await _httpClient.GetFromJsonAsync<Actor>($"/actor/{id}");
+            if(result == null)
+            {
+                return null;
+            }
+            return result;
+        }
+
+        //public async Task UpdateActor(Actor actor)
+        //{
+        //   var result = await _httpClient.PutAsJsonAsync($"/actor/{actor.ActorId}", actor);
+        //}
+
+        public async Task DeleteActor(int id)
+        {
+            var result = await _httpClient.DeleteAsync($"/actor/{id}");
+        }
+
+        public async Task AddActor(Actor actor)
+        {
+            var result = await _httpClient.PostAsJsonAsync("/actor", actor);
+        }
     }
 }

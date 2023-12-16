@@ -6,5 +6,10 @@ namespace OnlineTickets.Client.Services.ProducerServices
     {
         List<Producer> Producers { get; set; }
         Task<List<Producer>> GetProducersList();
+        Task<Producer> GetProducerById(int id);
+        Task AddProducer(Producer producer);
+        Task DeleteProducer(int id);
+        //Task UpdateProducer(Producer producer);
+
     }
 }

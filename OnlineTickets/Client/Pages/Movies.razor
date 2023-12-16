@@ -1,7 +1,9 @@
-﻿@using OnlineTickets.Client.Services.MovieServices
+﻿@page "/movies"
+
+@using OnlineTickets.Client.Services.MovieServices
 @inject IMovieService MovieService
 
-<h3>Movies</h3>
+<h3><b>Movies</b></h3>
 
 <div class="row">
     @foreach (var movie in MovieService.Movies)
@@ -57,9 +59,8 @@
 
 
 @code {
-    
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        MovieService.GetMoviesList();
+        await MovieService.GetMoviesList();
     }
 }

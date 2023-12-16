@@ -6,7 +6,7 @@
 
 @if(movie is not null)
 {
-    <h3>@movie.MovieName Details</h3>
+    <h3><b>@movie.MovieName Details</b></h3>
 
     <div class="media my-2">
         <div class="media-img-wrapper mr-2">
@@ -72,9 +72,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        await MovieService.GetMoviesList();
-
-        movie = MovieService.Movies.FirstOrDefault(m => m.MovieId == MovieId);
+       movie = await MovieService.GetMovieById(MovieId);
 
        await ActorService.GetActorsList();
 

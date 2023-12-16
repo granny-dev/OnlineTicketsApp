@@ -50,16 +50,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWVEZXRhaWxzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/llv/Github/OnlineTicketsApp/OnlineTickets/Client/Pages/Movies.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWVzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/llv/Github/OnlineTicketsApp/OnlineTickets/Client/Pages/ProducerDetails.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjZXJEZXRhaWxzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/llv/Github/OnlineTicketsApp/OnlineTickets/Client/Pages/Producers.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjZXJzLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/llv/Github/OnlineTicketsApp/OnlineTickets/Client/Shared/Movies.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1vdmllcy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/llv/Github/OnlineTicketsApp/OnlineTickets/Client/_Imports.razor]

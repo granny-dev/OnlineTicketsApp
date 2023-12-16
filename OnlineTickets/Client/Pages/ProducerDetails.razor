@@ -6,7 +6,7 @@
 
 @if(producer is not null)
 {
-    <h3>@producer.ProducerName Details</h3>
+    <h3><b>@producer.ProducerName Details</b></h3>
 
     <div class="media my-3">
         <div class="media-img-wrapper mr-2">
@@ -55,9 +55,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        await ProducerService.GetProducersList();
-
-        producer = ProducerService.Producers.FirstOrDefault(p => p.ProducerId == ProducerId);
+        producer = await ProducerService.GetProducerById(ProducerId);
 
        await MovieService.GetMoviesList();
 
