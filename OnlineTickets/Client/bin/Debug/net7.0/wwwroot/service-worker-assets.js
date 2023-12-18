@@ -61,7 +61,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-dFSQsCdXBwKEM3c7ZvFC4aSQ2zSsNBsrGZtvHL8sNpY=",
+      "hash": "sha256-cZ1hzHXLZtJB1rnIcA3vTFaxhHRPOSC13NJzPbOPVVE=",
       "url": "index.html"
     },
     {
@@ -69,12 +69,20 @@
       "url": "manifest.json"
     },
     {
-      "hash": "sha256-mVIKw+ZE+WOueUpCvUTrwUKCw2Ge8ZQJdSKXL2N5IJQ=",
+      "hash": "sha256-lOCs45frNf+D7me6lKLgUhRCdt4VwHCp9H6Ct+YWzfs=",
+      "url": "_framework\/blazor.webassembly.js"
+    },
+    {
+      "hash": "sha256-Bh3TBkV3prW4iaWAvvvYCaRP5SOqXcdxyg5AwX7ABkY=",
       "url": "OnlineTickets.Client.styles.css"
     },
     {
-      "hash": "sha256-lOCs45frNf+D7me6lKLgUhRCdt4VwHCp9H6Ct+YWzfs=",
-      "url": "_framework\/blazor.webassembly.js"
+      "hash": "sha256-5V8ovY1srbIIz7lzzMhLd3nNJ9LJ6bHoBOnLJahv8Go=",
+      "url": "_framework\/Blazored.LocalStorage.dll"
+    },
+    {
+      "hash": "sha256-6wGoA8FmxkQCTFIXEM+U+Y2kJJnSTJXRYwuByAUPWGU=",
+      "url": "_framework\/Blazored.Toast.dll"
     },
     {
       "hash": "sha256-D1Cpv8dUhVhigWOZxMvQ0dgeOCRgaFoDpnRrjK\/cjRM=",
@@ -865,25 +873,29 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-7m9Lx5LzyRzjyEaLRRTeVXnQY86P7WaDO\/fh+chnZm8=",
+      "hash": "sha256-Ww2RGih\/DvHFMfOFz03iapoTR2QgNt+paQ3YifA6kc0=",
       "url": "_framework\/OnlineTickets.Shared.dll"
     },
     {
-      "hash": "sha256-D2BTH+a53SgX9FECdozdV8yNRKYizMQzr+w07h32PlQ=",
+      "hash": "sha256-XhH3uAcKrb+7pYNm5jp6fGeKOWGc03nXwby\/Nt3d+UE=",
       "url": "_framework\/OnlineTickets.Shared.pdb"
     },
     {
-      "hash": "sha256-5TkMozlQWf9vVbniXBF4zu0I6mOWirOwugX4ZN3UMCk=",
+      "hash": "sha256-Ph2J42MecXbFXCQ59N+wEalY5HNthxFtiG2eo322an8=",
       "url": "_framework\/OnlineTickets.Client.dll"
     },
     {
-      "hash": "sha256-9A1e3Hg0NrsTuJRpumGCMHK\/IxxvRkwGzQrR760AOLY=",
+      "hash": "sha256-YeSe\/CSnwFlhY8g292v2GS0AlGcf\/5gMgLoJWFJ2KrQ=",
       "url": "_framework\/OnlineTickets.Client.pdb"
     },
     {
-      "hash": "sha256-+qgOetLWuhYUEg7UfOKvhYI1ymdd\/ybsQCvknSRHT34=",
+      "hash": "sha256-C+lUDH8pFJRy1vv5uGy6i0tB6xMSyuQGpKcSOBRkUY0=",
       "url": "_framework\/blazor.boot.json"
+    },
+    {
+      "hash": "sha256-UvwTBwDrCS9yh35f14Sx+NrDIVftgIzc2IyOkol9to0=",
+      "url": "_content\/Blazored.Toast\/Blazored.Toast.bundle.scp.css"
     }
   ],
-  "version": "+PQMUSAV"
+  "version": "Txqs8Mt8"
 };

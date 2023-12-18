@@ -1677,3 +1677,11 @@ D:\llv\Github\OnlineTicketsApp\OnlineTickets\Client\obj\Debug\net7.0\OnlineTicke
 D:\llv\Github\OnlineTicketsApp\OnlineTickets\Client\obj\Debug\net7.0\refint\OnlineTickets.Client.dll
 D:\llv\Github\OnlineTicketsApp\OnlineTickets\Client\obj\Debug\net7.0\OnlineTickets.Client.pdb
 D:\llv\Github\OnlineTicketsApp\OnlineTickets\Client\obj\Debug\net7.0\ref\OnlineTickets.Client.dll
+D:\llv\Github\OnlineTicketsApp\OnlineTickets\Client\bin\Debug\net7.0\wwwroot\_framework\Blazored.LocalStorage.dll
+D:\llv\Github\OnlineTicketsApp\OnlineTickets\Client\bin\Debug\net7.0\wwwroot\_framework\Blazored.Toast.dll
+D:\llv\Github\OnlineTicketsApp\OnlineTickets\Client\bin\Debug\net7.0\wwwroot\_framework\Blazored.LocalStorage.dll.gz
+D:\llv\Github\OnlineTicketsApp\OnlineTickets\Client\bin\Debug\net7.0\wwwroot\_framework\Blazored.Toast.dll.gz
+D:\llv\Github\OnlineTicketsApp\OnlineTickets\Client\bin\Debug\net7.0\Blazored.LocalStorage.dll
+D:\llv\Github\OnlineTicketsApp\OnlineTickets\Client\bin\Debug\net7.0\Blazored.Toast.dll
+D:\llv\Github\OnlineTicketsApp\OnlineTickets\Client\obj\Debug\net7.0\compressed\nj0ohnm0zf.gz
+D:\llv\Github\OnlineTicketsApp\OnlineTickets\Client\obj\Debug\net7.0\compressed\s0k0zrkkaj.gz

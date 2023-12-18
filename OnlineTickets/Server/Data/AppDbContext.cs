@@ -11,6 +11,7 @@ namespace OnlineTickets.Server.Data
         public DbSet<Cinema> Cinemas { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Producer> Producers { get; set; }
+        public DbSet<Place> Places { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -100,7 +101,7 @@ namespace OnlineTickets.Server.Data
                     CinemaName = "Blokbaster",
                     CinemaLogo = "https://www.blockbuster.ua/upload/iblock/e9f/c8f1de7e046f5d6926dde59758622a77.jpg",
                     CinemaDescription = "Blokbuster is located near the subway station Petrovka and is housed within an entertainment complex that includes a cinema as well as a variety of other entertainments for all ages. In addition to a 3D IMAX theatre, 5D cinema, and a megaplex, the theatre also features bowling lanes, billiards tables, restaurants, slot machines, and skating rinks.",
-                    Capacity = 50,
+                    Capacity = 18,
                 },
                 new Cinema
                 {
@@ -116,7 +117,7 @@ namespace OnlineTickets.Server.Data
                     CinemaName = "Butterfly Cinema",
                     CinemaLogo = "https://www.kino-butterfly.com.ua/img/background.jpg",
                     CinemaDescription = "Located near the Vokzalnaya metro station, the Butterfly Cinema is relatively new, having opened in 2004 in the Ultramarine Entertainment Centre. With six auditoriums, this cinema seats several hundred people in each room and in very comfortable, upholstered seats. Various films are featured here, including ones for adults as well as children, new hits, and old films.",
-                    Capacity = 30,
+                    Capacity = 16,
                 }
              };
             modelBuilder.Entity<Cinema>().HasData(Cinemas);
@@ -274,6 +275,47 @@ namespace OnlineTickets.Server.Data
                 }
             };
             modelBuilder.Entity<Producer>().HasData(Producers);
+
+            List<Place> Places = new()
+            {
+                new Place
+                {
+                    PlaceId = 1,
+                    PlaceName = "",
+                },
+                new Place
+                {
+                    PlaceId = 2,
+                    PlaceName = "FirstRow"
+                },
+                new Place
+                {
+                    PlaceId = 3,
+                    PlaceName = "Row"
+                }
+            };
+            modelBuilder.Entity<Place>().HasData(Places);
+
+            modelBuilder.SharedTypeEntity<Dictionary<string, object>>("MoviePlace").HasData(
+                new {MoviesMovieId = 1, PlacesPlaceId = 1},
+                new{MoviesMovieId = 1, PlacesPlaceId = 2},
+                new {MoviesMovieId = 1, PlacesPlaceId = 3},
+                new {MoviesMovieId = 2, PlacesPlaceId = 1},
+                new {MoviesMovieId = 2, PlacesPlaceId = 2},
+                new {MoviesMovieId = 2, PlacesPlaceId = 3},
+                new {MoviesMovieId = 3, PlacesPlaceId = 1},
+                new {MoviesMovieId = 3, PlacesPlaceId = 2},
+                new {MoviesMovieId = 3, PlacesPlaceId = 3},
+                new {MoviesMovieId = 4, PlacesPlaceId = 1},
+                new {MoviesMovieId = 4, PlacesPlaceId = 2},
+                new {MoviesMovieId = 4, PlacesPlaceId = 3},
+                new {MoviesMovieId = 5, PlacesPlaceId = 1},
+                new {MoviesMovieId = 5, PlacesPlaceId = 2},
+                new {MoviesMovieId = 5, PlacesPlaceId = 3},
+                new {MoviesMovieId = 6, PlacesPlaceId = 1},
+                new {MoviesMovieId = 6, PlacesPlaceId = 2},
+                new { MoviesMovieId = 6,PlacesPlaceId = 3}
+                );
         }
         
                

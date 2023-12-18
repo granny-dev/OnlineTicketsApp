@@ -17,6 +17,113 @@ namespace OnlineTickets.Server.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.14");
 
+            modelBuilder.Entity("MoviePlace", b =>
+                {
+                    b.Property<int>("MoviesMovieId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("PlacesPlaceId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("MoviesMovieId", "PlacesPlaceId");
+
+                    b.HasIndex("PlacesPlaceId");
+
+                    b.ToTable("MoviePlace");
+
+                    b.HasData(
+                        new
+                        {
+                            MoviesMovieId = 1,
+                            PlacesPlaceId = 1
+                        },
+                        new
+                        {
+                            MoviesMovieId = 1,
+                            PlacesPlaceId = 2
+                        },
+                        new
+                        {
+                            MoviesMovieId = 1,
+                            PlacesPlaceId = 3
+                        },
+                        new
+                        {
+                            MoviesMovieId = 2,
+                            PlacesPlaceId = 1
+                        },
+                        new
+                        {
+                            MoviesMovieId = 2,
+                            PlacesPlaceId = 2
+                        },
+                        new
+                        {
+                            MoviesMovieId = 2,
+                            PlacesPlaceId = 3
+                        },
+                        new
+                        {
+                            MoviesMovieId = 3,
+                            PlacesPlaceId = 1
+                        },
+                        new
+                        {
+                            MoviesMovieId = 3,
+                            PlacesPlaceId = 2
+                        },
+                        new
+                        {
+                            MoviesMovieId = 3,
+                            PlacesPlaceId = 3
+                        },
+                        new
+                        {
+                            MoviesMovieId = 4,
+                            PlacesPlaceId = 1
+                        },
+                        new
+                        {
+                            MoviesMovieId = 4,
+                            PlacesPlaceId = 2
+                        },
+                        new
+                        {
+                            MoviesMovieId = 4,
+                            PlacesPlaceId = 3
+                        },
+                        new
+                        {
+                            MoviesMovieId = 5,
+                            PlacesPlaceId = 1
+                        },
+                        new
+                        {
+                            MoviesMovieId = 5,
+                            PlacesPlaceId = 2
+                        },
+                        new
+                        {
+                            MoviesMovieId = 5,
+                            PlacesPlaceId = 3
+                        },
+                        new
+                        {
+                            MoviesMovieId = 6,
+                            PlacesPlaceId = 1
+                        },
+                        new
+                        {
+                            MoviesMovieId = 6,
+                            PlacesPlaceId = 2
+                        },
+                        new
+                        {
+                            MoviesMovieId = 6,
+                            PlacesPlaceId = 3
+                        });
+                });
+
             modelBuilder.Entity("OnlineTickets.Shared.Actor", b =>
                 {
                     b.Property<int>("ActorId")
@@ -148,7 +255,7 @@ namespace OnlineTickets.Server.Migrations
                         new
                         {
                             CinemaId = 1,
-                            Capacity = 50,
+                            Capacity = 18,
                             CinemaDescription = "Blokbuster is located near the subway station Petrovka and is housed within an entertainment complex that includes a cinema as well as a variety of other entertainments for all ages. In addition to a 3D IMAX theatre, 5D cinema, and a megaplex, the theatre also features bowling lanes, billiards tables, restaurants, slot machines, and skating rinks.",
                             CinemaLogo = "https://www.blockbuster.ua/upload/iblock/e9f/c8f1de7e046f5d6926dde59758622a77.jpg",
                             CinemaName = "Blokbaster"
@@ -164,7 +271,7 @@ namespace OnlineTickets.Server.Migrations
                         new
                         {
                             CinemaId = 3,
-                            Capacity = 30,
+                            Capacity = 16,
                             CinemaDescription = "Located near the Vokzalnaya metro station, the Butterfly Cinema is relatively new, having opened in 2004 in the Ultramarine Entertainment Centre. With six auditoriums, this cinema seats several hundred people in each room and in very comfortable, upholstered seats. Various films are featured here, including ones for adults as well as children, new hits, and old films.",
                             CinemaLogo = "https://www.kino-butterfly.com.ua/img/background.jpg",
                             CinemaName = "Butterfly Cinema"
@@ -203,6 +310,9 @@ namespace OnlineTickets.Server.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("PlaceId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("TEXT");
 
@@ -213,7 +323,20 @@ namespace OnlineTickets.Server.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int>("Qty")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("Reserved")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("SelectedDate")
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("StartDate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("MovieId");
@@ -230,90 +353,152 @@ namespace OnlineTickets.Server.Migrations
                             MovieId = 1,
                             CinemaId = 1,
                             CinemaName = "Blokbaster",
-                            EndDate = new DateTime(2023, 12, 24, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2689),
+                            EndDate = new DateTime(2023, 12, 25, 2, 54, 35, 904, DateTimeKind.Local).AddTicks(3864),
                             MovieCategory = "Cartoon",
                             MovieDescription = "The plot follows the Grinch and his pet dog Max who plan to stop Whoville's Christmas celebration by stealing all the town's decorations and gifts.",
                             MovieImageUrl = "https://upload.wikimedia.org/wikipedia/en/4/4f/The_Grinch%2C_final_poster.jpg",
                             MovieName = "The Grinch",
+                            PlaceId = 0,
                             Price = 20m,
                             ProducerId = 6,
                             ProducerName = "Chris Meledandri",
-                            StartDate = new DateTime(2023, 12, 17, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2629)
+                            Qty = 0,
+                            Reserved = 0,
+                            SelectedDate = new DateTime(2023, 12, 18, 2, 54, 35, 904, DateTimeKind.Local).AddTicks(3788),
+                            StartDate = new DateTime(2023, 12, 18, 2, 54, 35, 904, DateTimeKind.Local).AddTicks(3863),
+                            Status = "Available"
                         },
                         new
                         {
                             MovieId = 2,
                             CinemaId = 2,
                             CinemaName = "Cinema Citi",
-                            EndDate = new DateTime(2023, 12, 27, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2698),
+                            EndDate = new DateTime(2023, 12, 28, 2, 54, 35, 904, DateTimeKind.Local).AddTicks(3875),
                             MovieCategory = "Family",
                             MovieDescription = "James looks back at the last Christmas he and Bob spent scraping a living on the streets and how Bob helped him through one of his toughest times – providing strength, friendship and inspiration – and ultimately teaching each other about the true meaning of Christmas spirit along the way.",
                             MovieImageUrl = "https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Christmas_gift_from_bob_ver2.jpg/330px-Christmas_gift_from_bob_ver2.jpg",
                             MovieName = "A Gift from Bob",
+                            PlaceId = 0,
                             Price = 25m,
                             ProducerId = 5,
                             ProducerName = "Charles Martin Smith",
-                            StartDate = new DateTime(2023, 12, 20, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2697)
+                            Qty = 0,
+                            Reserved = 0,
+                            SelectedDate = new DateTime(2023, 12, 18, 2, 54, 35, 904, DateTimeKind.Local).AddTicks(3872),
+                            StartDate = new DateTime(2023, 12, 21, 2, 54, 35, 904, DateTimeKind.Local).AddTicks(3874),
+                            Status = "Available"
                         },
                         new
                         {
                             MovieId = 3,
                             CinemaId = 3,
                             CinemaName = "Butterfly Cinema",
-                            EndDate = new DateTime(2023, 12, 31, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2702),
+                            EndDate = new DateTime(2024, 1, 1, 2, 54, 35, 904, DateTimeKind.Local).AddTicks(3883),
                             MovieCategory = "Romance",
                             MovieDescription = "Katarina \"Kate\" Andrich, a young aspiring singer, bounces around between her friends’ places, and has a dead-end job as an elf at a year-round Christmas shop in Central London, whose strict but good-hearted Chinese owner calls herself \"Santa\". Whilst at work, she notices a man outside staring upward and strikes up a conversation, learning that his name is Tom Webster and his oft-repeated life wisdom is to \"look up\" for things that others seldom observe.",
                             MovieImageUrl = "https://upload.wikimedia.org/wikipedia/en/0/0c/Last_Christmas_poster.jpeg",
                             MovieName = "Last Christmas",
+                            PlaceId = 0,
                             Price = 22m,
                             ProducerId = 4,
                             ProducerName = "Paul Feig",
-                            StartDate = new DateTime(2023, 12, 24, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2701)
+                            Qty = 0,
+                            Reserved = 0,
+                            SelectedDate = new DateTime(2023, 12, 18, 2, 54, 35, 904, DateTimeKind.Local).AddTicks(3877),
+                            StartDate = new DateTime(2023, 12, 25, 2, 54, 35, 904, DateTimeKind.Local).AddTicks(3882),
+                            Status = "Available"
                         },
                         new
                         {
                             MovieId = 4,
                             CinemaId = 1,
                             CinemaName = "Blokbaster",
-                            EndDate = new DateTime(2023, 12, 26, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2707),
+                            EndDate = new DateTime(2023, 12, 27, 2, 54, 35, 904, DateTimeKind.Local).AddTicks(3911),
                             MovieCategory = "Drama",
                             MovieDescription = "Based on the 2005 biography American Prometheus by Kai Bird and Martin J. Sherwin, the film chronicles the career of Oppenheimer, with the story predominantly focusing on his studies, his direction of the Manhattan Project during World War II, and his eventual fall from grace due to his 1954 security hearing.",
                             MovieImageUrl = "https://upload.wikimedia.org/wikipedia/en/4/4a/Oppenheimer_%28film%29.jpg",
                             MovieName = "Oppenheimer",
+                            PlaceId = 0,
                             Price = 28m,
                             ProducerId = 3,
                             ProducerName = "Christopher Nolan",
-                            StartDate = new DateTime(2023, 12, 19, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2706)
+                            Qty = 0,
+                            Reserved = 0,
+                            SelectedDate = new DateTime(2023, 12, 18, 2, 54, 35, 904, DateTimeKind.Local).AddTicks(3907),
+                            StartDate = new DateTime(2023, 12, 20, 2, 54, 35, 904, DateTimeKind.Local).AddTicks(3909),
+                            Status = "Available"
                         },
                         new
                         {
                             MovieId = 5,
                             CinemaId = 2,
                             CinemaName = "Cinema Citi",
-                            EndDate = new DateTime(2023, 12, 24, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2711),
+                            EndDate = new DateTime(2023, 12, 25, 2, 54, 35, 904, DateTimeKind.Local).AddTicks(3916),
                             MovieCategory = "Comedy",
                             MovieDescription = "Based on the eponymous fashion dolls by Mattel, it is the first live-action Barbie film after numerous computer-animated films and specials.",
                             MovieImageUrl = "https://upload.wikimedia.org/wikipedia/en/0/0b/Barbie_2023_poster.jpg",
                             MovieName = "Barbie",
+                            PlaceId = 0,
                             Price = 24m,
                             ProducerId = 2,
                             ProducerName = "Greta Gerwig",
-                            StartDate = new DateTime(2023, 12, 17, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2710)
+                            Qty = 0,
+                            Reserved = 0,
+                            SelectedDate = new DateTime(2023, 12, 18, 2, 54, 35, 904, DateTimeKind.Local).AddTicks(3912),
+                            StartDate = new DateTime(2023, 12, 18, 2, 54, 35, 904, DateTimeKind.Local).AddTicks(3915),
+                            Status = "Available"
                         },
                         new
                         {
                             MovieId = 6,
                             CinemaId = 3,
                             CinemaName = "Butterfly Cinema",
-                            EndDate = new DateTime(2023, 12, 25, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2715),
+                            EndDate = new DateTime(2023, 12, 26, 2, 54, 35, 904, DateTimeKind.Local).AddTicks(3922),
                             MovieCategory = "Comedy",
                             MovieDescription = "Italian-American brothers Mario and Luigi have recently opened a plumbing business in Brooklyn, to the derision of their ex-employer Spike and the disapproval of their father. After seeing a significant water main leak on the news, Mario and Luigi go underground to fix it but are sucked into a Warp Pipe and separated.",
                             MovieImageUrl = "https://upload.wikimedia.org/wikipedia/en/4/44/The_Super_Mario_Bros._Movie_poster.jpg",
                             MovieName = "The Super Mario Bros. Movie",
+                            PlaceId = 0,
                             Price = 27m,
                             ProducerId = 1,
                             ProducerName = "Aaron Horvath",
-                            StartDate = new DateTime(2023, 12, 18, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2714)
+                            Qty = 0,
+                            Reserved = 0,
+                            SelectedDate = new DateTime(2023, 12, 18, 2, 54, 35, 904, DateTimeKind.Local).AddTicks(3918),
+                            StartDate = new DateTime(2023, 12, 19, 2, 54, 35, 904, DateTimeKind.Local).AddTicks(3921),
+                            Status = "Available"
+                        });
+                });
+
+            modelBuilder.Entity("OnlineTickets.Shared.Place", b =>
+                {
+                    b.Property<int>("PlaceId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("PlaceName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("PlaceId");
+
+                    b.ToTable("Places");
+
+                    b.HasData(
+                        new
+                        {
+                            PlaceId = 1,
+                            PlaceName = ""
+                        },
+                        new
+                        {
+                            PlaceId = 2,
+                            PlaceName = "FirstRow"
+                        },
+                        new
+                        {
+                            PlaceId = 3,
+                            PlaceName = "Row"
                         });
                 });
 
@@ -382,6 +567,21 @@ namespace OnlineTickets.Server.Migrations
                             ProducerName = "Chris Meledandri",
                             ProducerProfilePictureURL = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Chris_Meledandri_at_the_2018_Fast_Company_Innovation_Festival_1.jpg/330px-Chris_Meledandri_at_the_2018_Fast_Company_Innovation_Festival_1.jpg"
                         });
+                });
+
+            modelBuilder.Entity("MoviePlace", b =>
+                {
+                    b.HasOne("OnlineTickets.Shared.Movie", null)
+                        .WithMany()
+                        .HasForeignKey("MoviesMovieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("OnlineTickets.Shared.Place", null)
+                        .WithMany()
+                        .HasForeignKey("PlacesPlaceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("OnlineTickets.Shared.Actor", b =>

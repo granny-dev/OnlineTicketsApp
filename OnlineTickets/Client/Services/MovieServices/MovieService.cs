@@ -44,8 +44,8 @@ public class MovieService : IMovieService
         var result = await _httpClient.DeleteAsync($"/movie/{id}");
     }
 
-    //public async Task UpdateMovie(Movie movie)
-    //{
-    //    var result = await _httpClient.PutAsJsonAsync($"/movie/{movie.MovieId}", movie);
-    //}
+    public async Task UpdateMovie(Movie movie)
+    {
+        var result = await _httpClient.PutAsJsonAsync($"/movie/{movie.MovieId}", movie);
+    }
 }

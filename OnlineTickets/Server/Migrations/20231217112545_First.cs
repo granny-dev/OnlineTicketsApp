@@ -30,6 +30,19 @@ namespace OnlineTickets.Server.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Places",
+                columns: table => new
+                {
+                    PlaceId = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    PlaceName = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Places", x => x.PlaceId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Producers",
                 columns: table => new
                 {
@@ -101,6 +114,30 @@ namespace OnlineTickets.Server.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "MoviePlace",
+                columns: table => new
+                {
+                    MoviesMovieId = table.Column<int>(type: "INTEGER", nullable: false),
+                    PlacesPlaceId = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MoviePlace", x => new { x.MoviesMovieId, x.PlacesPlaceId });
+                    table.ForeignKey(
+                        name: "FK_MoviePlace_Movies_MoviesMovieId",
+                        column: x => x.MoviesMovieId,
+                        principalTable: "Movies",
+                        principalColumn: "MovieId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_MoviePlace_Places_PlacesPlaceId",
+                        column: x => x.PlacesPlaceId,
+                        principalTable: "Places",
+                        principalColumn: "PlaceId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "Cinemas",
                 columns: new[] { "CinemaId", "Capacity", "CinemaDescription", "CinemaLogo", "CinemaName" },
@@ -109,6 +146,15 @@ namespace OnlineTickets.Server.Migrations
                     { 1, 50, "Blokbuster is located near the subway station Petrovka and is housed within an entertainment complex that includes a cinema as well as a variety of other entertainments for all ages. In addition to a 3D IMAX theatre, 5D cinema, and a megaplex, the theatre also features bowling lanes, billiards tables, restaurants, slot machines, and skating rinks.", "https://www.blockbuster.ua/upload/iblock/e9f/c8f1de7e046f5d6926dde59758622a77.jpg", "Blokbaster" },
                     { 2, 20, "Cinema Citi hosts three rooms for watching films in 3D. Films are brought in from all genres and all parts of the world, including European films and Hollywood productions. A VIP hall features a popcorn bar, fresh juice bar, and other conveniences for those wanting to watch in comfort.", "https://cinemaciti.ua/app/images/logo.svg", "Cinema Citi" },
                     { 3, 30, "Located near the Vokzalnaya metro station, the Butterfly Cinema is relatively new, having opened in 2004 in the Ultramarine Entertainment Centre. With six auditoriums, this cinema seats several hundred people in each room and in very comfortable, upholstered seats. Various films are featured here, including ones for adults as well as children, new hits, and old films.", "https://www.kino-butterfly.com.ua/img/background.jpg", "Butterfly Cinema" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Places",
+                columns: new[] { "PlaceId", "PlaceName" },
+                values: new object[,]
+                {
+                    { 1, "FirstRow" },
+                    { 2, "Row" }
                 });
 
             migrationBuilder.InsertData(
@@ -129,12 +175,12 @@ namespace OnlineTickets.Server.Migrations
                 columns: new[] { "MovieId", "CinemaId", "CinemaName", "EndDate", "MovieCategory", "MovieDescription", "MovieImageUrl", "MovieName", "Price", "ProducerId", "ProducerName", "StartDate" },
                 values: new object[,]
                 {
-                    { 1, 1, "Blokbaster", new DateTime(2023, 12, 24, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2689), "Cartoon", "The plot follows the Grinch and his pet dog Max who plan to stop Whoville's Christmas celebration by stealing all the town's decorations and gifts.", "https://upload.wikimedia.org/wikipedia/en/4/4f/The_Grinch%2C_final_poster.jpg", "The Grinch", 20m, 6, "Chris Meledandri", new DateTime(2023, 12, 17, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2629) },
-                    { 2, 2, "Cinema Citi", new DateTime(2023, 12, 27, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2698), "Family", "James looks back at the last Christmas he and Bob spent scraping a living on the streets and how Bob helped him through one of his toughest times – providing strength, friendship and inspiration – and ultimately teaching each other about the true meaning of Christmas spirit along the way.", "https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Christmas_gift_from_bob_ver2.jpg/330px-Christmas_gift_from_bob_ver2.jpg", "A Gift from Bob", 25m, 5, "Charles Martin Smith", new DateTime(2023, 12, 20, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2697) },
-                    { 3, 3, "Butterfly Cinema", new DateTime(2023, 12, 31, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2702), "Romance", "Katarina \"Kate\" Andrich, a young aspiring singer, bounces around between her friends’ places, and has a dead-end job as an elf at a year-round Christmas shop in Central London, whose strict but good-hearted Chinese owner calls herself \"Santa\". Whilst at work, she notices a man outside staring upward and strikes up a conversation, learning that his name is Tom Webster and his oft-repeated life wisdom is to \"look up\" for things that others seldom observe.", "https://upload.wikimedia.org/wikipedia/en/0/0c/Last_Christmas_poster.jpeg", "Last Christmas", 22m, 4, "Paul Feig", new DateTime(2023, 12, 24, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2701) },
-                    { 4, 1, "Blokbaster", new DateTime(2023, 12, 26, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2707), "Drama", "Based on the 2005 biography American Prometheus by Kai Bird and Martin J. Sherwin, the film chronicles the career of Oppenheimer, with the story predominantly focusing on his studies, his direction of the Manhattan Project during World War II, and his eventual fall from grace due to his 1954 security hearing.", "https://upload.wikimedia.org/wikipedia/en/4/4a/Oppenheimer_%28film%29.jpg", "Oppenheimer", 28m, 3, "Christopher Nolan", new DateTime(2023, 12, 19, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2706) },
-                    { 5, 2, "Cinema Citi", new DateTime(2023, 12, 24, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2711), "Comedy", "Based on the eponymous fashion dolls by Mattel, it is the first live-action Barbie film after numerous computer-animated films and specials.", "https://upload.wikimedia.org/wikipedia/en/0/0b/Barbie_2023_poster.jpg", "Barbie", 24m, 2, "Greta Gerwig", new DateTime(2023, 12, 17, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2710) },
-                    { 6, 3, "Butterfly Cinema", new DateTime(2023, 12, 25, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2715), "Comedy", "Italian-American brothers Mario and Luigi have recently opened a plumbing business in Brooklyn, to the derision of their ex-employer Spike and the disapproval of their father. After seeing a significant water main leak on the news, Mario and Luigi go underground to fix it but are sucked into a Warp Pipe and separated.", "https://upload.wikimedia.org/wikipedia/en/4/44/The_Super_Mario_Bros._Movie_poster.jpg", "The Super Mario Bros. Movie", 27m, 1, "Aaron Horvath", new DateTime(2023, 12, 18, 1, 16, 4, 817, DateTimeKind.Local).AddTicks(2714) }
+                    { 1, 1, "Blokbaster", new DateTime(2023, 12, 24, 13, 25, 45, 270, DateTimeKind.Local).AddTicks(708), "Cartoon", "The plot follows the Grinch and his pet dog Max who plan to stop Whoville's Christmas celebration by stealing all the town's decorations and gifts.", "https://upload.wikimedia.org/wikipedia/en/4/4f/The_Grinch%2C_final_poster.jpg", "The Grinch", 20m, 6, "Chris Meledandri", new DateTime(2023, 12, 17, 13, 25, 45, 270, DateTimeKind.Local).AddTicks(648) },
+                    { 2, 2, "Cinema Citi", new DateTime(2023, 12, 27, 13, 25, 45, 270, DateTimeKind.Local).AddTicks(723), "Family", "James looks back at the last Christmas he and Bob spent scraping a living on the streets and how Bob helped him through one of his toughest times – providing strength, friendship and inspiration – and ultimately teaching each other about the true meaning of Christmas spirit along the way.", "https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Christmas_gift_from_bob_ver2.jpg/330px-Christmas_gift_from_bob_ver2.jpg", "A Gift from Bob", 25m, 5, "Charles Martin Smith", new DateTime(2023, 12, 20, 13, 25, 45, 270, DateTimeKind.Local).AddTicks(721) },
+                    { 3, 3, "Butterfly Cinema", new DateTime(2023, 12, 31, 13, 25, 45, 270, DateTimeKind.Local).AddTicks(728), "Romance", "Katarina \"Kate\" Andrich, a young aspiring singer, bounces around between her friends’ places, and has a dead-end job as an elf at a year-round Christmas shop in Central London, whose strict but good-hearted Chinese owner calls herself \"Santa\". Whilst at work, she notices a man outside staring upward and strikes up a conversation, learning that his name is Tom Webster and his oft-repeated life wisdom is to \"look up\" for things that others seldom observe.", "https://upload.wikimedia.org/wikipedia/en/0/0c/Last_Christmas_poster.jpeg", "Last Christmas", 22m, 4, "Paul Feig", new DateTime(2023, 12, 24, 13, 25, 45, 270, DateTimeKind.Local).AddTicks(726) },
+                    { 4, 1, "Blokbaster", new DateTime(2023, 12, 26, 13, 25, 45, 270, DateTimeKind.Local).AddTicks(732), "Drama", "Based on the 2005 biography American Prometheus by Kai Bird and Martin J. Sherwin, the film chronicles the career of Oppenheimer, with the story predominantly focusing on his studies, his direction of the Manhattan Project during World War II, and his eventual fall from grace due to his 1954 security hearing.", "https://upload.wikimedia.org/wikipedia/en/4/4a/Oppenheimer_%28film%29.jpg", "Oppenheimer", 28m, 3, "Christopher Nolan", new DateTime(2023, 12, 19, 13, 25, 45, 270, DateTimeKind.Local).AddTicks(731) },
+                    { 5, 2, "Cinema Citi", new DateTime(2023, 12, 24, 13, 25, 45, 270, DateTimeKind.Local).AddTicks(735), "Comedy", "Based on the eponymous fashion dolls by Mattel, it is the first live-action Barbie film after numerous computer-animated films and specials.", "https://upload.wikimedia.org/wikipedia/en/0/0b/Barbie_2023_poster.jpg", "Barbie", 24m, 2, "Greta Gerwig", new DateTime(2023, 12, 17, 13, 25, 45, 270, DateTimeKind.Local).AddTicks(735) },
+                    { 6, 3, "Butterfly Cinema", new DateTime(2023, 12, 25, 13, 25, 45, 270, DateTimeKind.Local).AddTicks(772), "Comedy", "Italian-American brothers Mario and Luigi have recently opened a plumbing business in Brooklyn, to the derision of their ex-employer Spike and the disapproval of their father. After seeing a significant water main leak on the news, Mario and Luigi go underground to fix it but are sucked into a Warp Pipe and separated.", "https://upload.wikimedia.org/wikipedia/en/4/44/The_Super_Mario_Bros._Movie_poster.jpg", "The Super Mario Bros. Movie", 27m, 1, "Aaron Horvath", new DateTime(2023, 12, 18, 13, 25, 45, 270, DateTimeKind.Local).AddTicks(770) }
                 });
 
             migrationBuilder.InsertData(
@@ -153,10 +199,34 @@ namespace OnlineTickets.Server.Migrations
                     { 9, "Luke Antony Newman Treadaway (born 10 September 1984) is a British actor and singer. He won an Olivier Award for Best Leading Actor for his performance as Christopher in the National Theatre's production of The Curious Incident of the Dog in the Night-Time in 2013.", "Luke Treadaway", "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Luke_Treadaway_in_Ordeal_by_Innocence_2018.jpg/330px-Luke_Treadaway_in_Ordeal_by_Innocence_2018.jpg", 2 }
                 });
 
+            migrationBuilder.InsertData(
+                table: "MoviePlace",
+                columns: new[] { "MoviesMovieId", "PlacesPlaceId" },
+                values: new object[,]
+                {
+                    { 1, 1 },
+                    { 1, 2 },
+                    { 2, 1 },
+                    { 2, 2 },
+                    { 3, 1 },
+                    { 3, 2 },
+                    { 4, 1 },
+                    { 4, 2 },
+                    { 5, 1 },
+                    { 5, 2 },
+                    { 6, 1 },
+                    { 6, 2 }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Actors_MovieId",
                 table: "Actors",
                 column: "MovieId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MoviePlace_PlacesPlaceId",
+                table: "MoviePlace",
+                column: "PlacesPlaceId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Movies_CinemaId",
@@ -176,7 +246,13 @@ namespace OnlineTickets.Server.Migrations
                 name: "Actors");
 
             migrationBuilder.DropTable(
+                name: "MoviePlace");
+
+            migrationBuilder.DropTable(
                 name: "Movies");
+
+            migrationBuilder.DropTable(
+                name: "Places");
 
             migrationBuilder.DropTable(
                 name: "Cinemas");

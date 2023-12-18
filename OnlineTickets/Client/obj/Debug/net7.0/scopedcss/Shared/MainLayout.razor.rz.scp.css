@@ -38,7 +38,7 @@ main[b-wk5xnty6vx] {
 
 @media (max-width: 640.98px) {
     .top-row:not(.auth)[b-wk5xnty6vx] {
-        display: none;
+        /*display: none;*/
     }
 
     .top-row.auth[b-wk5xnty6vx] {

@@ -9,7 +9,7 @@
     @foreach (var movie in MovieService.Movies)
     {
         <div class="col-md-6 border-primary mb-2">
-            <div class="card mb-2" style="width:400px; height:450px;">
+            <div class="card mb-2" style="width:400px; height:400px;">
                 <div class="row g-0">
                     <div class="col-md-12">
                         <div class="card-header text-white bg-info">
@@ -27,7 +27,6 @@
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
-                            <p class="card-text"><b>Cinema: </b>@movie.CinemaName</p>
                             <p class="card-text"><b>Category: </b>@movie.MovieCategory</p>
                             <a href="/cinema/@movie.CinemaId">
                                 <p><b>Cinema: </b>@movie.CinemaName</p>
@@ -35,21 +34,10 @@
                             <p class="card-text"><b>Start Date: </b>@movie.StartDate.ToShortDateString()</p>
                             <p class="card-text"><b>End Date: </b>@movie.EndDate.ToShortDateString()</p>
                             <p class="card-text"><b>Price: </b>$@movie.Price</p>
-                            <p class="card-text">
-                                <b>Status: </b>
-                                @if (DateTime.Now >= movie.StartDate && DateTime.Now <= movie.EndDate)
-                                {
-                                    <span>Available</span>
-                                }
-                                else
-                                {
-                                    <span>Upcoming</span>
-                                }
-                            </p>
+                            <p class="card-text"><b>Status: </b>@movie.Status</p>
+                            
                         </div>
-                        <a class="btn btn-sm btn-outline-primary m-2">Buy ticket</a>
                     </div>
-
                 </div>
             </div>
         </div>

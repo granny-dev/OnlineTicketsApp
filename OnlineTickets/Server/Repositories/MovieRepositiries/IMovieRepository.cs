@@ -9,5 +9,6 @@ namespace OnlineTickets.Server.Repositories.MovieRepositiries
         Task<Movie> AddMovieAsync(Movie movie);
         Task<Movie> UpdateMovieAsync(Movie movie);
         Task<Movie> DeleteMovieAsync(int id);
+        Task<string> GetStatusAsync(Movie movie);
     }
 }

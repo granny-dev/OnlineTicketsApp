@@ -1,8 +1,13 @@
 ﻿@page "/movie/{movieId:int}"
 
 @using OnlineTickets.Client.Services.MovieServices
+
 @inject IMovieService MovieService
 @inject IActorService ActorService
+@inject ILocalStorageService LocalStorageService
+@inject IToastService ToastService
+@inject ICartService CartService
+@inject NavigationManager NavigationManager
 
 @if(movie is not null)
 {
@@ -18,7 +23,7 @@
             <a href="">
                 <h4>@movie.MovieName</h4>
             </a>
-            <h5>@movie.MovieCategory</h5>
+            <h5><b>Category: </b>@movie.MovieCategory</h5>
             <p>@movie.MovieDescription</p>
             <a href="/producer/@movie.ProducerId">
                 <h5><b>Producer: </b>@movie.ProducerName</h5>
@@ -26,15 +31,40 @@
             <a href="/cinema/@movie.CinemaId">
                 <h5><b>Cinema: </b>@movie.CinemaName</h5>
             </a>
-            <h5>@movie.StartDate.ToShortDateString()</h5>
-            <h5>@movie.EndDate.ToShortDateString()</h5>
-            @if (movie.StartDate <= DateTime.Now)
-            {
-                <h5>available</h5>
-            }
-            <h5>upcoming</h5>
+            <h5><b>StartDate: </b>@movie.StartDate.ToShortDateString()</h5>
+            <h5><b>EndDate: </b>@movie.EndDate.ToShortDateString()</h5>
+            <h5><b>Status: </b>@movie.Status</h5>
 
-            <h5><b>Price: </b>$@movie.Price</h5>
+            <div class="form-group my-2">
+                <label for="date"><b>Select date</b></label>
+                <InputDate id="date" @bind-Value="movie.SelectedDate" class="form-control" min="@movie.StartDate.ToString("yyyy-MM-dd")" max="@movie.EndDate.ToString("yyyy-MM-dd")" />
+
+                <label for="dropdown"><b>Select row</b></label>
+                <InputSelect id="dropdown" class="form-control edit-active" @bind-Value="movie.Places[0].PlaceName">
+                    
+                    @foreach (var place in movie.Places)
+                    {
+                        <option value="@place.PlaceName" @onselect="()=>movie.Places[0].PlaceName = place.PlaceName">@place.PlaceName</option>
+                    }
+                </InputSelect>
+                <label for="qty"><b>How many tickets?</b></label>
+                <InputNumber id="qty" @bind-Value="movie.Qty" class="form-control"></InputNumber>
+            </div>
+            @if (movie.Places[0].PlaceName == "FirstRow")
+            {
+                <p><b>Price: </b>$@(movie.Price *2)</p>
+                <h5><b>Total price:</b>$@(movie.Price * 2 * movie.Qty)</h5>
+            }
+            else
+            {
+                <p><b>Price: </b>$@movie.Price</p>
+                <h5><b>Total price:</b>$@(movie.Price * movie.Qty)</h5>
+            }
+
+            
+            
+            <button class="btn btn-outline-primary" @onclick="AddToCart">Add to cart</button>
+
             <h5 class="my-2"><b>Actors in @movie.MovieName</b></h5>
             <ul class="list-unstyled">
                 @foreach (var actor in movieActors)
@@ -67,14 +97,13 @@
 
     Movie? movie;
 
-
     List<Actor> movieActors = new List<Actor>();
 
     protected override async Task OnInitializedAsync()
     {
-       movie = await MovieService.GetMovieById(MovieId);
+        movie = await MovieService.GetMovieById(MovieId);
 
-       await ActorService.GetActorsList();
+        await ActorService.GetActorsList();
 
         foreach (var actor in ActorService.Actors)
         {
@@ -83,5 +112,16 @@
                 movieActors.Add(actor);
             }
         }
+    }
+
+    async Task AddToCart()
+    {
+        if (movie.Places[0].PlaceName == "FirstRow")
+        {
+            movie.Price *= 2;
+        }
+        await CartService.AddToCart(movie);
+
+        NavigationManager.NavigateTo("/cart");
     }
 }

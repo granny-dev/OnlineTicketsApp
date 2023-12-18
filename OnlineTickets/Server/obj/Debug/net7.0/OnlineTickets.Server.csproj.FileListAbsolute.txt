@@ -145,3 +145,5 @@ D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\obj\Debug\net7.0\refint\Onli
 D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\obj\Debug\net7.0\OnlineTickets.Server.pdb
 D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\obj\Debug\net7.0\OnlineTickets.Server.genruntimeconfig.cache
 D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\obj\Debug\net7.0\ref\OnlineTickets.Server.dll
+D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\bin\Debug\net7.0\Blazored.LocalStorage.dll
+D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\bin\Debug\net7.0\Blazored.Toast.dll

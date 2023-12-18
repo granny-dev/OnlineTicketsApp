@@ -1,7 +1,7 @@
 {
   "entryAssembly": "OnlineTickets.Client",
   "resources": {
-    "hash": "sha256-SNoNeZ1N3YZWCysOGmB46R4lAie/1izn8gmMgjgQPUM=",
+    "hash": "sha256-x+GrtMu4NfEYO9WHrXtVlgWJdQqJ2WeIN4RdK1sD14U=",
     "runtime": {
       "dotnet.7.0.14.nz5wv9b6q9.js": "sha256-YWGUknGRzP/fgO6YjvCJKPVQNZAPEd6ll+rHfQEIW+I=",
       "dotnet.timezones.blat": "sha256-t5xviiOQTfAsF0UDhmcyalKiaehUmf/sqJl97tmPM0M=",
@@ -11,6 +11,8 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
+      "Blazored.LocalStorage.dll": "sha256-5V8ovY1srbIIz7lzzMhLd3nNJ9LJ6bHoBOnLJahv8Go=",
+      "Blazored.Toast.dll": "sha256-6wGoA8FmxkQCTFIXEM+U+Y2kJJnSTJXRYwuByAUPWGU=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-D1Cpv8dUhVhigWOZxMvQ0dgeOCRgaFoDpnRrjK/cjRM=",
       "Microsoft.AspNetCore.Components.dll": "sha256-exYLeZNL1vFA3MQumWi+ZzcFWgY5X7qZZcnV1h6Ae9s=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-p85TpgJG4JgyaEcSwPMg5usQsPzPBSfXz6JhiPcRdyI=",
@@ -202,12 +204,12 @@
       "mscorlib.dll": "sha256-YcsJInaT/kw3Vrm+SESegPxvT/Lr9RE6rE/KnxWIIc0=",
       "netstandard.dll": "sha256-TztlSRjADgiEABbiAMdWZpHrUVd8wnRtQRAvlwmRP/4=",
       "System.Private.CoreLib.dll": "sha256-BAhrZ8Zg3cJKQipxdzqQo+9jtPkOkRx1ou3oIhDohtk=",
-      "OnlineTickets.Shared.dll": "sha256-7m9Lx5LzyRzjyEaLRRTeVXnQY86P7WaDO/fh+chnZm8=",
-      "OnlineTickets.Client.dll": "sha256-5TkMozlQWf9vVbniXBF4zu0I6mOWirOwugX4ZN3UMCk="
+      "OnlineTickets.Shared.dll": "sha256-Ww2RGih/DvHFMfOFz03iapoTR2QgNt+paQ3YifA6kc0=",
+      "OnlineTickets.Client.dll": "sha256-1/oIhlJ51zfvRXCUj4Be8UK8+9W6cjlarmSwGqnAsVs="
     },
     "pdb": {
-      "OnlineTickets.Shared.pdb": "sha256-D2BTH+a53SgX9FECdozdV8yNRKYizMQzr+w07h32PlQ=",
-      "OnlineTickets.Client.pdb": "sha256-9A1e3Hg0NrsTuJRpumGCMHK/IxxvRkwGzQrR760AOLY="
+      "OnlineTickets.Shared.pdb": "sha256-XhH3uAcKrb+7pYNm5jp6fGeKOWGc03nXwby/Nt3d+UE=",
+      "OnlineTickets.Client.pdb": "sha256-rTcHnJiGnUuOrBc3XNyuneZ903z2kmHvNkh93sUUmFw="
     },
     "runtimeAssets": {
       "dotnet.wasm": {

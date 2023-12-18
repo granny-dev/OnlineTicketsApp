@@ -25,5 +25,9 @@
     <ProjectReference Include="..\Shared\OnlineTickets.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 
 </Project>

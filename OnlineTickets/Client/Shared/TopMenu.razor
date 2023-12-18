@@ -1,0 +1,35 @@
+﻿
+@inject ISyncLocalStorageService LocalStorageService
+@inject ICartService CartService
+
+@implements IDisposable
+
+<a href="cart" class="btn btn-info">
+    <i class="oi oi-cart"></i>
+    Cart
+    <span class="badge">@GetProductCount()</span>
+</a>
+
+@code {
+
+    protected override  async Task OnInitializedAsync()
+    {
+        CartService.OnChange += StateHasChanged;
+
+    }
+
+    public void Dispose()
+    {
+        CartService.OnChange -= StateHasChanged;
+    }
+
+    int GetProductCount()
+    {
+        var cart =  LocalStorageService.GetItem<List<Movie>>("cart");
+        if(cart is not null)
+        {
+            return cart.Count;
+        }
+        return 0;
+    }
+}

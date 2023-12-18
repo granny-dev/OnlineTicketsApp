@@ -1,0 +1,67 @@
+﻿@page "/cart"
+
+@inject ICartService CartService
+
+<h3>Cart</h3>
+
+@if(tickets == null)
+{
+    <span>No tickets here... Maybe you should buy one?</span>
+}
+else
+{
+    <div class="row">
+        @foreach (var movie in tickets)
+        {
+            <div class="col-md-6 border-primary mb-2">
+                <div class="card mb-2" style="width:400px; height:400px;">
+                    <div class="row g-0">
+                        <div class="col-md-12">
+                            <div class="card-header text-white bg-info">
+                                <p class="card-text">
+                                    <h5 class=" card-title">@movie.MovieName</h5>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                                <img class="media-img" src="@movie.MovieImageUrl" alt="@movie.MovieName" style="width:200px;" />
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <p class="card-text"><b>Cinema: </b>@movie.CinemaName</p>
+                                <p class="card-text"><b>Category: </b>@movie.MovieCategory</p>
+                                <p class="card-text"><b>Price: </b>$@movie.Price</p>
+                                <p class="card-text"><b>Quantity: </b>@movie.Qty</p>
+                                <p class="card-text"><b>Total Price: </b>$@(movie.Price * movie.Qty)</p>
+                                <p class="card-text"><b>Date: </b>@movie.SelectedDate.ToShortDateString()</p>
+                            </div>
+                            <button class="btn btn-outline-danger mx-2" @onclick="@(()=>DeleteTicket(movie))">
+                                <i class="oi oi-trash "></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="m-2">
+            <b>Total @tickets.Sum(t => t.Qty) tickets: </b>$@tickets.Sum(t =>t.Price * t.Qty)
+        </div>
+    </div>
+}
+
+@code {
+
+    List<Movie> tickets = new List<Movie>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        tickets = await CartService.GetAllTickets();
+    }
+
+    async Task DeleteTicket(Movie movie)
+    {
+        await CartService.DeleteFromCart(movie);
+        tickets = await CartService.GetAllTickets();
+    }
+}

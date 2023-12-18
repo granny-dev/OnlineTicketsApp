@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "trmXlPzEpVoI0qiDgm5iZmu40Y9DvyLvtfj6g8mIe5PhcuAbIJxvtumEMhzzlfszbDqVGJMwn30rfdWoagDpYA==",
+  "dgSpecHash": "dw3BWel/HUQCjt7NgKuQTaOCRtNwNRrPPv7lMm3uLGuZ7gNlQYq7hMhh3SvKem/QGzwQakqBdAtg966JBXLtiA==",
   "success": true,
   "projectFilePath": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\OnlineTickets.Client.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Liudmila\\.nuget\\packages\\blazored.localstorage\\4.4.0\\blazored.localstorage.4.4.0.nupkg.sha512",
+    "C:\\Users\\Liudmila\\.nuget\\packages\\blazored.toast\\4.1.0\\blazored.toast.4.1.0.nupkg.sha512",
     "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.14\\microsoft.aspnetcore.authorization.7.0.14.nupkg.sha512",
     "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.14\\microsoft.aspnetcore.components.7.0.14.nupkg.sha512",
     "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\7.0.14\\microsoft.aspnetcore.components.analyzers.7.0.14.nupkg.sha512",

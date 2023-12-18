@@ -1,7 +1,10 @@
+using Blazored.LocalStorage;
+using Blazored.Toast;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using OnlineTickets.Client;
 using OnlineTickets.Client.Services.ActorServices;
+using OnlineTickets.Client.Services.CartServices;
 using OnlineTickets.Client.Services.CinemaServices;
 using OnlineTickets.Client.Services.MovieServices;
 using OnlineTickets.Client.Services.ProducerServices;
@@ -21,6 +24,9 @@ namespace OnlineTickets.Client
             builder.Services.AddScoped<IActorService, ActorService>();
             builder.Services.AddScoped<IProducerService, ProducerService>();
             builder.Services.AddScoped<ICinemaService, CinemaService>();
+            builder.Services.AddScoped<ICartService, CartService>();
+            builder.Services.AddBlazoredLocalStorage();
+            builder.Services.AddBlazoredToast();
 
             await builder.Build().RunAsync();
         }
