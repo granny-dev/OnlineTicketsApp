@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "dw3BWel/HUQCjt7NgKuQTaOCRtNwNRrPPv7lMm3uLGuZ7gNlQYq7hMhh3SvKem/QGzwQakqBdAtg966JBXLtiA==",
+  "dgSpecHash": "PLIavl/IkrsM12JTvBFCdEyNla0+MsKFqCvq+zB8v/KOSaAFTkS8gs6w/BuPv7lMEpMqdyyZtCPOKNJ3Ez1QBg==",
   "success": true,
   "projectFilePath": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\OnlineTickets.Client.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.14\\microsoft.aspnetcore.authorization.7.0.14.nupkg.sha512",
     "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.14\\microsoft.aspnetcore.components.7.0.14.nupkg.sha512",
     "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\7.0.14\\microsoft.aspnetcore.components.analyzers.7.0.14.nupkg.sha512",
+    "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.aspnetcore.components.authorization\\7.0.14\\microsoft.aspnetcore.components.authorization.7.0.14.nupkg.sha512",
     "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.aspnetcore.components.forms\\7.0.14\\microsoft.aspnetcore.components.forms.7.0.14.nupkg.sha512",
     "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.aspnetcore.components.web\\7.0.14\\microsoft.aspnetcore.components.web.7.0.14.nupkg.sha512",
     "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\7.0.14\\microsoft.aspnetcore.components.webassembly.7.0.14.nupkg.sha512",

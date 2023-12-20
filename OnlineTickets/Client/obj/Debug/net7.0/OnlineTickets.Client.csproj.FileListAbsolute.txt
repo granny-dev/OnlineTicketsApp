@@ -1685,3 +1685,7 @@ D:\llv\Github\OnlineTicketsApp\OnlineTickets\Client\bin\Debug\net7.0\Blazored.Lo
 D:\llv\Github\OnlineTicketsApp\OnlineTickets\Client\bin\Debug\net7.0\Blazored.Toast.dll
 D:\llv\Github\OnlineTicketsApp\OnlineTickets\Client\obj\Debug\net7.0\compressed\nj0ohnm0zf.gz
 D:\llv\Github\OnlineTicketsApp\OnlineTickets\Client\obj\Debug\net7.0\compressed\s0k0zrkkaj.gz
+D:\llv\Github\OnlineTicketsApp\OnlineTickets\Client\bin\Debug\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll
+D:\llv\Github\OnlineTicketsApp\OnlineTickets\Client\bin\Debug\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll.gz
+D:\llv\Github\OnlineTicketsApp\OnlineTickets\Client\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Authorization.dll
+D:\llv\Github\OnlineTicketsApp\OnlineTickets\Client\obj\Debug\net7.0\compressed\o61vbfw549.gz

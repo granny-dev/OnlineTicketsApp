@@ -1,7 +1,7 @@
 {
   "entryAssembly": "OnlineTickets.Client",
   "resources": {
-    "hash": "sha256-x+GrtMu4NfEYO9WHrXtVlgWJdQqJ2WeIN4RdK1sD14U=",
+    "hash": "sha256-AUBwM9qMFrqaqncbdKAKlwYgT5zvi8ol6oqk5QxVFPg=",
     "runtime": {
       "dotnet.7.0.14.nz5wv9b6q9.js": "sha256-YWGUknGRzP/fgO6YjvCJKPVQNZAPEd6ll+rHfQEIW+I=",
       "dotnet.timezones.blat": "sha256-t5xviiOQTfAsF0UDhmcyalKiaehUmf/sqJl97tmPM0M=",
@@ -15,6 +15,7 @@
       "Blazored.Toast.dll": "sha256-6wGoA8FmxkQCTFIXEM+U+Y2kJJnSTJXRYwuByAUPWGU=",
       "Microsoft.AspNetCore.Authorization.dll": "sha256-D1Cpv8dUhVhigWOZxMvQ0dgeOCRgaFoDpnRrjK/cjRM=",
       "Microsoft.AspNetCore.Components.dll": "sha256-exYLeZNL1vFA3MQumWi+ZzcFWgY5X7qZZcnV1h6Ae9s=",
+      "Microsoft.AspNetCore.Components.Authorization.dll": "sha256-DlERhcE7aUUyMFdHKZV1qCKMlb6Po2VRoER3fruuPNk=",
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-p85TpgJG4JgyaEcSwPMg5usQsPzPBSfXz6JhiPcRdyI=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-fufgcHvsaxvMQe0xlebCB4KKK5bHbz+G6MV9j6Ofd2c=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-5mV7NKOLnKHO3CRk8pySXNbPq+UdrKOgJpjib9h5p14=",
@@ -204,12 +205,12 @@
       "mscorlib.dll": "sha256-YcsJInaT/kw3Vrm+SESegPxvT/Lr9RE6rE/KnxWIIc0=",
       "netstandard.dll": "sha256-TztlSRjADgiEABbiAMdWZpHrUVd8wnRtQRAvlwmRP/4=",
       "System.Private.CoreLib.dll": "sha256-BAhrZ8Zg3cJKQipxdzqQo+9jtPkOkRx1ou3oIhDohtk=",
-      "OnlineTickets.Shared.dll": "sha256-Ww2RGih/DvHFMfOFz03iapoTR2QgNt+paQ3YifA6kc0=",
-      "OnlineTickets.Client.dll": "sha256-1/oIhlJ51zfvRXCUj4Be8UK8+9W6cjlarmSwGqnAsVs="
+      "OnlineTickets.Shared.dll": "sha256-4xjCPcGL+wIMt0OyqMFdqRPw/gZfr/IauuQi7ZYPQZo=",
+      "OnlineTickets.Client.dll": "sha256-sPgc62YlPC9kfzNs3PYU67vqrL+YcjIsYoXrRjDXWjw="
     },
     "pdb": {
-      "OnlineTickets.Shared.pdb": "sha256-XhH3uAcKrb+7pYNm5jp6fGeKOWGc03nXwby/Nt3d+UE=",
-      "OnlineTickets.Client.pdb": "sha256-rTcHnJiGnUuOrBc3XNyuneZ903z2kmHvNkh93sUUmFw="
+      "OnlineTickets.Shared.pdb": "sha256-xzyDZfmDW9hb6YQbX/xjji7yswkn7GfJj930ET9zv5I=",
+      "OnlineTickets.Client.pdb": "sha256-5ZJNF7sF3iDPyY+UOuMrgQls/tAOpsWradCtYd/11rk="
     },
     "runtimeAssets": {
       "dotnet.wasm": {

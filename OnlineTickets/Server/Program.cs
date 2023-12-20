@@ -5,6 +5,7 @@ using OnlineTickets.Server.Repositories.ActorRepositories;
 using OnlineTickets.Server.Repositories.CinemaRepositories;
 using OnlineTickets.Server.Repositories.MovieRepositiries;
 using OnlineTickets.Server.Repositories.ProducerRepositories;
+using OnlineTickets.Server.Repositories.StatsRepositories;
 using System;
 
 namespace OnlineTickets
@@ -26,6 +27,7 @@ namespace OnlineTickets
             builder.Services.AddScoped<ICinemaRepository, CinemaRepository>();
             builder.Services.AddScoped<IMovieRepository, MovieRepository>();
             builder.Services.AddScoped<IProducerRepository, ProducerRepository>();
+            builder.Services.AddScoped<IStatsRepository , StatsRepository>();
 
             var app = builder.Build();
 

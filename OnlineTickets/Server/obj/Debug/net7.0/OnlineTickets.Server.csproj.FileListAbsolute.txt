@@ -147,3 +147,4 @@ D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\obj\Debug\net7.0\OnlineTicke
 D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\obj\Debug\net7.0\ref\OnlineTickets.Server.dll
 D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\bin\Debug\net7.0\Blazored.LocalStorage.dll
 D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\bin\Debug\net7.0\Blazored.Toast.dll
+D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Authorization.dll

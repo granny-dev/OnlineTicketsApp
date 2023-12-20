@@ -12,6 +12,7 @@ namespace OnlineTickets.Server.Data
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Producer> Producers { get; set; }
         public DbSet<Place> Places { get; set; }
+        public DbSet<Stats> Stats { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

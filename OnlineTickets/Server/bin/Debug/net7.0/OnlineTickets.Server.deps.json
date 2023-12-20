@@ -78,6 +78,18 @@
         }
       },
       "Microsoft.AspNetCore.Components.Analyzers/7.0.14": {},
+      "Microsoft.AspNetCore.Components.Authorization/7.0.14": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authorization": "7.0.14",
+          "Microsoft.AspNetCore.Components": "7.0.14"
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.AspNetCore.Components.Authorization.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.1423.52316"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Components.Forms/7.0.14": {
         "dependencies": {
           "Microsoft.AspNetCore.Components": "7.0.14"
@@ -537,6 +549,7 @@
         "dependencies": {
           "Blazored.LocalStorage": "4.4.0",
           "Blazored.Toast": "4.1.0",
+          "Microsoft.AspNetCore.Components.Authorization": "7.0.14",
           "Microsoft.AspNetCore.Components.WebAssembly": "7.0.14",
           "OnlineTickets.Shared": "1.0.0"
         },
@@ -598,6 +611,13 @@
       "sha512": "sha512-qdhspIGt1B04iqIhxrch4ZJ/l+pjDMaibHdgaANbLVZBaV9qfc66TcGh82+dz2wyn2hZdYRlAw1oe4WIQpK5CQ==",
       "path": "microsoft.aspnetcore.components.analyzers/7.0.14",
       "hashPath": "microsoft.aspnetcore.components.analyzers.7.0.14.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Components.Authorization/7.0.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yqNaOADb0bn/gLVzkaJlQMI03VSzoSCpLyu4MCiZ78tJvOzv3FT0dmQL5Jtvp6tJ8d16W/BrBYJbUJmARw+WxA==",
+      "path": "microsoft.aspnetcore.components.authorization/7.0.14",
+      "hashPath": "microsoft.aspnetcore.components.authorization.7.0.14.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Components.Forms/7.0.14": {
       "type": "package",

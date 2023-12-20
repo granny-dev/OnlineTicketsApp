@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LCCEeQiTCbSSvNZSz/o9wbbYk1s1nLajq/J/U+By0bg=",
+  "Hash": "4x4qtXDZaswyyQPWvIE7xTS1erv53SFwPNi6VnHdb34=",
   "Source": "OnlineTickets.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -243,6 +243,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.14\\lib\\net7.0\\Microsoft.AspNetCore.Authorization.dll"
+    },
+    {
+      "Identity": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.dll",
+      "SourceId": "OnlineTickets.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Authorization.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.aspnetcore.components.authorization\\7.0.14\\lib\\net7.0\\Microsoft.AspNetCore.Components.Authorization.dll"
     },
     {
       "Identity": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll",
@@ -6684,6 +6703,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\dotnet.7.0.14.nz5wv9b6q9.js"
+    },
+    {
+      "Identity": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\obj\\Debug\\net7.0\\compressed\\o61vbfw549.gz",
+      "SourceId": "OnlineTickets.Client",
+      "SourceType": "Computed",
+      "ContentRoot": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Authorization.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.dll"
     },
     {
       "Identity": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\obj\\Debug\\net7.0\\compressed\\p6x6kxvf0f.gz",

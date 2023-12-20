@@ -93,6 +93,10 @@
       "url": "_framework\/Microsoft.AspNetCore.Components.dll"
     },
     {
+      "hash": "sha256-DlERhcE7aUUyMFdHKZV1qCKMlb6Po2VRoER3fruuPNk=",
+      "url": "_framework\/Microsoft.AspNetCore.Components.Authorization.dll"
+    },
+    {
       "hash": "sha256-p85TpgJG4JgyaEcSwPMg5usQsPzPBSfXz6JhiPcRdyI=",
       "url": "_framework\/Microsoft.AspNetCore.Components.Forms.dll"
     },
@@ -873,23 +877,23 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-Ww2RGih\/DvHFMfOFz03iapoTR2QgNt+paQ3YifA6kc0=",
+      "hash": "sha256-4xjCPcGL+wIMt0OyqMFdqRPw\/gZfr\/IauuQi7ZYPQZo=",
       "url": "_framework\/OnlineTickets.Shared.dll"
     },
     {
-      "hash": "sha256-XhH3uAcKrb+7pYNm5jp6fGeKOWGc03nXwby\/Nt3d+UE=",
+      "hash": "sha256-xzyDZfmDW9hb6YQbX\/xjji7yswkn7GfJj930ET9zv5I=",
       "url": "_framework\/OnlineTickets.Shared.pdb"
     },
     {
-      "hash": "sha256-Ph2J42MecXbFXCQ59N+wEalY5HNthxFtiG2eo322an8=",
+      "hash": "sha256-sPgc62YlPC9kfzNs3PYU67vqrL+YcjIsYoXrRjDXWjw=",
       "url": "_framework\/OnlineTickets.Client.dll"
     },
     {
-      "hash": "sha256-YeSe\/CSnwFlhY8g292v2GS0AlGcf\/5gMgLoJWFJ2KrQ=",
+      "hash": "sha256-5ZJNF7sF3iDPyY+UOuMrgQls\/tAOpsWradCtYd\/11rk=",
       "url": "_framework\/OnlineTickets.Client.pdb"
     },
     {
-      "hash": "sha256-C+lUDH8pFJRy1vv5uGy6i0tB6xMSyuQGpKcSOBRkUY0=",
+      "hash": "sha256-8xAmhyD\/6wTL725eZGM+QKuSo+TXM93MMxGWCwbPQ2k=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -897,5 +901,5 @@
       "url": "_content\/Blazored.Toast\/Blazored.Toast.bundle.scp.css"
     }
   ],
-  "version": "Txqs8Mt8"
+  "version": "SH3nqGNY"
 };
