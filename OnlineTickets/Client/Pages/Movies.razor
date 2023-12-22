@@ -6,7 +6,7 @@
 <h3><b>Movies</b></h3>
 
 <div class="row">
-    @foreach (var movie in MovieService.Movies)
+    @foreach (var movie in allMovies)
     {
         <div class="col-md-6 border-primary mb-2">
             <div class="card mb-2" style="width:400px; height:400px;">
@@ -47,8 +47,10 @@
 
 
 @code {
+    List<Movie> allMovies = new List<Movie>();
+
     protected override async Task OnInitializedAsync()
     {
-        await MovieService.GetMoviesList();
+       allMovies = await MovieService.GetMoviesList();
     }
 }

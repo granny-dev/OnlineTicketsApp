@@ -1,11 +1,11 @@
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.OpenApi.Models;
 using OnlineTickets.Server.Data;
 using OnlineTickets.Server.Repositories.ActorRepositories;
 using OnlineTickets.Server.Repositories.CinemaRepositories;
 using OnlineTickets.Server.Repositories.MovieRepositiries;
 using OnlineTickets.Server.Repositories.ProducerRepositories;
-using OnlineTickets.Server.Repositories.StatsRepositories;
 using System;
 
 namespace OnlineTickets
@@ -21,13 +21,17 @@ namespace OnlineTickets
             builder.Services.AddControllersWithViews();
             builder.Services.AddRazorPages();
 
+            builder.Services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "OnlineTickets", Version = "v1" });
+            });
+
             builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("Default")));
 
             builder.Services.AddScoped<IActorRepository, ActorRepository>();
             builder.Services.AddScoped<ICinemaRepository, CinemaRepository>();
             builder.Services.AddScoped<IMovieRepository, MovieRepository>();
             builder.Services.AddScoped<IProducerRepository, ProducerRepository>();
-            builder.Services.AddScoped<IStatsRepository , StatsRepository>();
 
             var app = builder.Build();
 
@@ -35,6 +39,11 @@ namespace OnlineTickets
             if (app.Environment.IsDevelopment())
             {
                 app.UseWebAssemblyDebugging();
+                 app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+            });
             }
             else
             {

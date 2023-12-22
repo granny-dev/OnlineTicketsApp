@@ -28,6 +28,7 @@
     async Task HandleLogin()
     {
         await LocalStorageService.SetItemAsync<string>("username", user.UserName);
+        await LocalStorageService.SetItemAsync<string>("useremail", user.UserEmail);
         await AuthenticationStateProvider.GetAuthenticationStateAsync();
         NavigationManager.NavigateTo("/");
     }

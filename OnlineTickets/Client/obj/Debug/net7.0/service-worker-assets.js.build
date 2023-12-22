@@ -109,6 +109,10 @@
       "url": "_framework\/Microsoft.AspNetCore.Components.WebAssembly.dll"
     },
     {
+      "hash": "sha256-J0CCV8pzxRp3B8T2pe0LK0gv9PCsQJHhDKAuvqiYfQU=",
+      "url": "_framework\/Microsoft.AspNetCore.JsonPatch.dll"
+    },
+    {
       "hash": "sha256-buRnUKP2Y+yAMrKqT4KYoO4XIXWzcrFuuyI8SeadeTU=",
       "url": "_framework\/Microsoft.AspNetCore.Metadata.dll"
     },
@@ -175,6 +179,10 @@
     {
       "hash": "sha256-jZp0x8\/BJDWy8XWsxYJaiGXW3zObZi90AYiYGjhemMU=",
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.dll"
+    },
+    {
+      "hash": "sha256-IsZJ91\/OW+fHzNqIgEc7Y072ns8z9dGritiSyvR9Wgc=",
+      "url": "_framework\/Newtonsoft.Json.dll"
     },
     {
       "hash": "sha256-P\/MqD0fCBd5bgTM16JC1QC\/Zz7s+CwViyzmDFkBG4\/c=",
@@ -877,23 +885,23 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-4xjCPcGL+wIMt0OyqMFdqRPw\/gZfr\/IauuQi7ZYPQZo=",
+      "hash": "sha256-4pQu\/820pNvR1NsWbQ5U6F\/AS2\/defP4Bd9vD9imtH4=",
       "url": "_framework\/OnlineTickets.Shared.dll"
     },
     {
-      "hash": "sha256-xzyDZfmDW9hb6YQbX\/xjji7yswkn7GfJj930ET9zv5I=",
+      "hash": "sha256-92biQ10UVCqC7JlN7MyUBmRwh7ltX21n4Y\/yXEH3HBg=",
       "url": "_framework\/OnlineTickets.Shared.pdb"
     },
     {
-      "hash": "sha256-sPgc62YlPC9kfzNs3PYU67vqrL+YcjIsYoXrRjDXWjw=",
+      "hash": "sha256-XOAuF+MD5va7m0nxjd4QvYpYmvkGEcfoj3pU1Uudq9Y=",
       "url": "_framework\/OnlineTickets.Client.dll"
     },
     {
-      "hash": "sha256-5ZJNF7sF3iDPyY+UOuMrgQls\/tAOpsWradCtYd\/11rk=",
+      "hash": "sha256-GoWew7DovKHulsRUGMRppGtbbCrCYILHXyrCZJiSazI=",
       "url": "_framework\/OnlineTickets.Client.pdb"
     },
     {
-      "hash": "sha256-8xAmhyD\/6wTL725eZGM+QKuSo+TXM93MMxGWCwbPQ2k=",
+      "hash": "sha256-MdCxYY\/ukn7JPk3jRgGmunEsw0VvNOvxvtetV9HoboY=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -901,5 +909,5 @@
       "url": "_content\/Blazored.Toast\/Blazored.Toast.bundle.scp.css"
     }
   ],
-  "version": "SH3nqGNY"
+  "version": "R6W1WCnu"
 };

@@ -7,7 +7,7 @@ namespace OnlineTickets.Client.Services.ProducerServices
     {
         private readonly HttpClient _httpClient;
 
-        public List<Producer> Producers { get; set; } = new List<Producer>();
+
         public ProducerService(HttpClient httpClient)
         {
             _httpClient = httpClient;
@@ -15,12 +15,12 @@ namespace OnlineTickets.Client.Services.ProducerServices
 
         public async Task<List<Producer>> GetProducersList()
         {
-            Producers = await _httpClient.GetFromJsonAsync<List<Producer>>("/producer");
-            if( Producers == null )
+            var producers = await _httpClient.GetFromJsonAsync<List<Producer>>("/producer");
+            if( producers == null )
             {
                 return new List<Producer>();
             }
-            return Producers;
+            return producers;
         }
 
         public async Task<Producer> GetProducerById(int id)
@@ -43,9 +43,9 @@ namespace OnlineTickets.Client.Services.ProducerServices
             var result = await _httpClient.DeleteAsync($"/producer/{id}");
         }
 
-        //public async Task UpdateProducer(Producer producer)
-        //{
-        //    var result = await _httpClient.PutAsJsonAsync($"/producer/{producer.ProducerId}", producer);
-        //}
+        public async Task UpdateProducer(Producer producer)
+        {
+            var result = await _httpClient.PutAsJsonAsync($"/producer/{producer.ProducerId}", producer);
+        }
     }
 }

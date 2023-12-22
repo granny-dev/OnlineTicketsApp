@@ -27,18 +27,38 @@ namespace OnlineTickets.Client.Services.CartServices
             {
                 cart = new List<Movie>();
             }
-            
-            var isAvailable =  _movieService.Movies.Any(m =>(m.SelectedDate <= movie.EndDate && m.SelectedDate >= movie.StartDate) && (m.Status == "Available"));
-            if(!isAvailable)
+
+            if(movie.Status == "Available")
+            {
+                cart.Add(movie);
+                movie.Reserved += movie.Qty;
+                //await _movieService.UpdateReserved(movie.MovieId, movie.Reserved);
+                await _movieService.UpdateMovie(movie);
+                await _localStorageService.SetItemAsync("cart", cart);
+                _toastService.ShowSuccess($"{movie.MovieName} added successfully!");
+            }
+
+
+            OnChange?.Invoke();
+        }
+
+        public async Task EditTicket(Movie movie)
+        {
+            var cart = await _localStorageService.GetItemAsync<List<Movie>>("cart");
+            if (cart == null)
+            {
+                cart = new List<Movie>();
+            }
+
+            var ticketToUpdate = cart.FirstOrDefault(t => t.MovieId == movie.MovieId);
+            if(ticketToUpdate == null)
             {
                 return;
             }
+            cart.Remove(ticketToUpdate);
             cart.Add(movie);
-            movie.Reserved++;
             await _localStorageService.SetItemAsync("cart", cart);
-            _toastService.ShowSuccess($"{movie.MovieName} added successfully!");
-
-            OnChange?.Invoke();
+            _toastService.ShowSuccess($"{movie.MovieName} edited successfully!");
         }
 
         public async Task<List<Movie>> GetAllTickets()
@@ -52,7 +72,7 @@ namespace OnlineTickets.Client.Services.CartServices
 
             foreach(var movie in cart)
             {
-                result.Add(movie);   
+                result.Add(movie);
             }
             return result;
         }
@@ -65,13 +85,15 @@ namespace OnlineTickets.Client.Services.CartServices
                 return;
             }
 
-            var ticketToDelete = cart.FirstOrDefault(t => t.MovieId == movie.MovieId && t.PlaceId == movie.PlaceId && t.SelectedDate == movie.SelectedDate);
+            var ticketToDelete = cart.FirstOrDefault(t => t.MovieId == movie.MovieId &&  t.SelectedDate == movie.SelectedDate && t.PlaceName == movie.PlaceName);
             if (ticketToDelete == null)
             {
                 return;
             }
             cart.Remove(ticketToDelete);
-            movie.Reserved--;
+            ticketToDelete.Reserved -= ticketToDelete.Qty;
+            //await _movieService.UpdateReserved(ticketToDelete.MovieId, ticketToDelete.Reserved);
+            await _movieService.UpdateMovie(ticketToDelete);
             await _localStorageService.SetItemAsync("cart", cart);
             _toastService.ShowSuccess($"{movie.MovieName} deleted successfully!");
 

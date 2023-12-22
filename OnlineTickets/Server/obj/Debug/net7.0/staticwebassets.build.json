@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "9YjjwP+K8tfcUtk6hm0LjXIs70sRrct4AlkrqrNShxA=",
+  "Hash": "BOXkhzFWLbf9RZSdnBYNdB7k1G1raRbgmI+AuYv7qTY=",
   "Source": "OnlineTickets.Server",
   "BasePath": "_content/OnlineTickets.Server",
   "Mode": "Default",
@@ -350,6 +350,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\7.0.14\\lib\\net7.0\\Microsoft.AspNetCore.Components.WebAssembly.dll"
+    },
+    {
+      "Identity": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.JsonPatch.dll",
+      "SourceId": "OnlineTickets.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.JsonPatch.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\8.0.0\\lib\\netstandard2.0\\Microsoft.AspNetCore.JsonPatch.dll"
     },
     {
       "Identity": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.dll",
@@ -806,6 +825,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.14\\runtimes\\browser-wasm\\lib\\net7.0\\netstandard.dll"
+    },
+    {
+      "Identity": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Newtonsoft.Json.dll",
+      "SourceId": "OnlineTickets.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Newtonsoft.Json.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\Liudmila\\.nuget\\packages\\newtonsoft.json\\13.0.3\\lib\\net6.0\\Newtonsoft.Json.dll"
     },
     {
       "Identity": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\OnlineTickets.Client.dll",
@@ -6166,6 +6204,25 @@
       "OriginalItemSpec": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Security.AccessControl.dll"
     },
     {
+      "Identity": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\obj\\Debug\\net7.0\\compressed\\ju9o3rs11v.gz",
+      "SourceId": "OnlineTickets.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.JsonPatch.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.JsonPatch.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.JsonPatch.dll"
+    },
+    {
       "Identity": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\obj\\Debug\\net7.0\\compressed\\jwit4b7hne.gz",
       "SourceId": "OnlineTickets.Client",
       "SourceType": "Project",
@@ -7095,6 +7152,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.ServiceModel.Web.dll"
+    },
+    {
+      "Identity": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\obj\\Debug\\net7.0\\compressed\\slcsj2kttq.gz",
+      "SourceId": "OnlineTickets.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Newtonsoft.Json.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Newtonsoft.Json.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Newtonsoft.Json.dll"
     },
     {
       "Identity": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\obj\\Debug\\net7.0\\compressed\\sqdgf190g8.gz",

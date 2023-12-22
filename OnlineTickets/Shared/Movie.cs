@@ -17,11 +17,9 @@ public class Movie
     public string Status { get; set; } = "Available";
     public string MovieCategory { get; set; } = string.Empty;
     public string MovieImageUrl { get; set; } = string.Empty;
-    public List<Actor>Actors { get; set; } = new List<Actor>();
     public int CinemaId { get; set; }
     public string CinemaName { get; set; } = string.Empty;
     public int ProducerId { get; set; }
     public string ProducerName { get; set;} = string.Empty;
-    public int PlaceId {  get; set; }
-    public List<Place> Places { get; set; } = new List<Place>();
+   public string PlaceName {  get; set; } = string.Empty;
 }

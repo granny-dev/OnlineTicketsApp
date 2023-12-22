@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PLIavl/IkrsM12JTvBFCdEyNla0+MsKFqCvq+zB8v/KOSaAFTkS8gs6w/BuPv7lMEpMqdyyZtCPOKNJ3Ez1QBg==",
+  "dgSpecHash": "381/UQfvmOtU653eFvc1i9TGclcV/+uZTWi1KidxQ2VWN4ljxitypmN/YJOorGwkAbt1eov9cIfA1kfdINAjXg==",
   "success": true,
   "projectFilePath": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\OnlineTickets.Client.csproj",
   "expectedPackageFiles": [
@@ -14,7 +14,9 @@
     "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.aspnetcore.components.web\\7.0.14\\microsoft.aspnetcore.components.web.7.0.14.nupkg.sha512",
     "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\7.0.14\\microsoft.aspnetcore.components.webassembly.7.0.14.nupkg.sha512",
     "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.devserver\\7.0.14\\microsoft.aspnetcore.components.webassembly.devserver.7.0.14.nupkg.sha512",
+    "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\8.0.0\\microsoft.aspnetcore.jsonpatch.8.0.0.nupkg.sha512",
     "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.aspnetcore.metadata\\7.0.14\\microsoft.aspnetcore.metadata.7.0.14.nupkg.sha512",
+    "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.extensions.configuration.binder\\7.0.4\\microsoft.extensions.configuration.binder.7.0.4.nupkg.sha512",
@@ -34,6 +36,7 @@
     "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.net.illink.analyzers\\7.0.100-1.23211.1\\microsoft.net.illink.analyzers.7.0.100-1.23211.1.nupkg.sha512",
     "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.net.illink.tasks\\7.0.100-1.23211.1\\microsoft.net.illink.tasks.7.0.100-1.23211.1.nupkg.sha512",
     "C:\\Users\\Liudmila\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\8.0.0\\microsoft.net.sdk.webassembly.pack.8.0.0.nupkg.sha512",
+    "C:\\Users\\Liudmila\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\Liudmila\\.nuget\\packages\\system.io.pipelines\\7.0.0\\system.io.pipelines.7.0.0.nupkg.sha512",
     "C:\\Users\\Liudmila\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\Liudmila\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",

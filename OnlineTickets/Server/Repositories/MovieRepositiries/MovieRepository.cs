@@ -26,18 +26,21 @@ namespace OnlineTickets.Server.Repositories.MovieRepositiries
             foreach(var movie in movies)
             {
                 movie.Status = await GetStatusAsync(movie);
+                await UpdateReservedAsync(movie.MovieId, movie.Reserved);
             }
             return movies;
         }
 
         public async Task<Movie>GetMovieByIdAsync(int id)
         {
-            var movie = await _context.Movies.Include(m => m.Places).FirstOrDefaultAsync(m => m.MovieId == id);
+            var movie = await _context.Movies.FirstOrDefaultAsync(m => m.MovieId == id);
             if (movie == null)
             {
                 return null;
             }
             movie.Status = await GetStatusAsync(movie);
+            await UpdateReservedAsync(movie.MovieId, movie.Reserved);
+
             return movie;
         }
 
@@ -45,16 +48,25 @@ namespace OnlineTickets.Server.Repositories.MovieRepositiries
         {
             movie.Status = await GetStatusAsync(movie);
            _context.Movies.Add(movie);
+            await UpdateReservedAsync(movie.MovieId, movie.Reserved);
             await _context.SaveChangesAsync();
             return movie;
         }
 
         public async Task<Movie> UpdateMovieAsync(Movie movie)
         {
-            movie.Status = await GetStatusAsync(movie);
+            
             _context.Movies.Update(movie);
+            movie.Status = await GetStatusAsync(movie);
+            await UpdateReservedAsync(movie.MovieId,movie.Reserved);
             await _context.SaveChangesAsync();
             return movie;
+        }
+
+        public async Task UpdateReservedAsync(int movieId, int reserved)
+        {
+            await _context.Movies.Where(m => m.MovieId == movieId).ExecuteUpdateAsync(u => u.SetProperty(m => m.Reserved, reserved));
+
         }
 
         public async Task<Movie> DeleteMovieAsync(int id)

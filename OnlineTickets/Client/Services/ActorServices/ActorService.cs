@@ -7,7 +7,7 @@ namespace OnlineTickets.Client.Services.ActorServices
     {
         private readonly HttpClient _httpClient;
 
-        public List<Actor> Actors { get; set; } = new List<Actor>();
+
 
         public ActorService(HttpClient httpClient)
         {
@@ -16,12 +16,12 @@ namespace OnlineTickets.Client.Services.ActorServices
 
         public async Task<List<Actor>> GetActorsList()
         {
-            Actors = await _httpClient.GetFromJsonAsync<List<Actor>>("/actor");
-            if(Actors == null)
+            var actors = await _httpClient.GetFromJsonAsync<List<Actor>>("/actor");
+            if(actors == null)
             {
                 return new List<Actor>();
             }
-            return Actors;
+            return actors;
         }
 
         public async Task<Actor> GetActorById(int id)
@@ -34,10 +34,10 @@ namespace OnlineTickets.Client.Services.ActorServices
             return result;
         }
 
-        //public async Task UpdateActor(Actor actor)
-        //{
-        //   var result = await _httpClient.PutAsJsonAsync($"/actor/{actor.ActorId}", actor);
-        //}
+        public async Task UpdateActor(Actor actor)
+        {
+            var result = await _httpClient.PutAsJsonAsync($"/actor/{actor.ActorId}", actor);
+        }
 
         public async Task DeleteActor(int id)
         {

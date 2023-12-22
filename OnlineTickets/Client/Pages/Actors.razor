@@ -6,7 +6,7 @@
 <h3><b>Actors</b></h3>
 
 <div class="row">
-    @foreach (var actor in ActorService.Actors)
+    @foreach (var actor in allActors)
     {
         <div class="col-md-4 border-primary mb-2">
             <div class="card mb-2" style="width:200px; height:350px;">
@@ -33,9 +33,10 @@
 
 
 @code {
+    List<Actor> allActors = new List<Actor>();
     protected override async Task OnInitializedAsync()
     {
-        await  ActorService.GetActorsList();
+      allActors =  await  ActorService.GetActorsList();
     }
 
 }

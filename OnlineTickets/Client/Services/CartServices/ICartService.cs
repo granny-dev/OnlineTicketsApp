@@ -9,5 +9,6 @@ namespace OnlineTickets.Client.Services.CartServices
         Task<List<Movie>> GetAllTickets();
 
         Task DeleteFromCart(Movie movie);
+        Task EditTicket(Movie movie);
     }
 }

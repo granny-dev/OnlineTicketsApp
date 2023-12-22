@@ -34,23 +34,22 @@
             <h5><b>StartDate: </b>@movie.StartDate.ToShortDateString()</h5>
             <h5><b>EndDate: </b>@movie.EndDate.ToShortDateString()</h5>
             <h5><b>Status: </b>@movie.Status</h5>
+            <h5><b>Reserved: </b>@movie.Reserved</h5>
 
             <div class="form-group my-2">
                 <label for="date"><b>Select date</b></label>
                 <InputDate id="date" @bind-Value="movie.SelectedDate" class="form-control" min="@movie.StartDate.ToString("yyyy-MM-dd")" max="@movie.EndDate.ToString("yyyy-MM-dd")" />
 
                 <label for="dropdown"><b>Select row</b></label>
-                <InputSelect id="dropdown" class="form-control edit-active" @bind-Value="movie.Places[0].PlaceName">
-                    
-                    @foreach (var place in movie.Places)
-                    {
-                        <option value="@place.PlaceName" @onselect="()=>movie.Places[0].PlaceName = place.PlaceName">@place.PlaceName</option>
-                    }
+                <InputSelect id="dropdown" class="form-control edit-active" @bind-Value="movie.PlaceName">
+                    <option value="">Select Row</option>
+                    <option value="FirstRow">FirstRow</option>
+                    <option value="Row">Row</option>
                 </InputSelect>
                 <label for="qty"><b>How many tickets?</b></label>
                 <InputNumber id="qty" @bind-Value="movie.Qty" class="form-control"></InputNumber>
             </div>
-            @if (movie.Places[0].PlaceName == "FirstRow")
+            @if (movie.PlaceName == "FirstRow")
             {
                 <p><b>Price: </b>$@(movie.Price *2)</p>
                 <h5><b>Total price:</b>$@(movie.Price * 2 * movie.Qty)</h5>
@@ -61,8 +60,6 @@
                 <h5><b>Total price:</b>$@(movie.Price * movie.Qty)</h5>
             }
 
-            
-            
             <button class="btn btn-outline-primary" @onclick="AddToCart">Add to cart</button>
 
             <h5 class="my-2"><b>Actors in @movie.MovieName</b></h5>
@@ -95,31 +92,47 @@
     [Parameter]
     public int MovieId{ get; set; }
 
+    List<Movie> allMovies = new List<Movie>();
+
     Movie? movie;
 
+    List<Actor> allActors = new List<Actor>();
+
     List<Actor> movieActors = new List<Actor>();
+
 
     protected override async Task OnInitializedAsync()
     {
         movie = await MovieService.GetMovieById(MovieId);
+        if(movie.StartDate >= DateTime.Now)
+        {
+            movie.SelectedDate = movie.StartDate;
+        }
+        else
+        {
+            movie.SelectedDate = DateTime.Now;
+        }
 
-        await ActorService.GetActorsList();
+        allActors = await ActorService.GetActorsList();
 
-        foreach (var actor in ActorService.Actors)
+        foreach (var actor in allActors)
         {
             if (actor.MovieId == MovieId)
             {
                 movieActors.Add(actor);
             }
         }
+
+
     }
 
     async Task AddToCart()
     {
-        if (movie.Places[0].PlaceName == "FirstRow")
+        if (movie.PlaceName == "FirstRow")
         {
             movie.Price *= 2;
         }
+
         await CartService.AddToCart(movie);
 
         NavigationManager.NavigateTo("/cart");

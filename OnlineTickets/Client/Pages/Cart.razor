@@ -1,6 +1,7 @@
 ﻿@page "/cart"
 
 @inject ICartService CartService
+@inject NavigationManager NavigationManager
 
 <h3>Cart</h3>
 
@@ -35,7 +36,10 @@ else
                                 <p class="card-text"><b>Total Price: </b>$@(movie.Price * movie.Qty)</p>
                                 <p class="card-text"><b>Date: </b>@movie.SelectedDate.ToShortDateString()</p>
                             </div>
-                            <button class="btn btn-outline-danger mx-2" @onclick="@(()=>DeleteTicket(movie))">
+                            <button class="btn btn-outline-warning mx-2" @onclick="@(()=>EditTicket(movie.MovieId))">
+                                <i class="oi oi-pencil"></i>
+                            </button>
+                            <button class="btn btn-outline-danger mx-2 float-right" @onclick="@(()=>DeleteTicket(movie))">
                                 <i class="oi oi-trash "></i>
                             </button>
                         </div>
@@ -63,5 +67,10 @@ else
     {
         await CartService.DeleteFromCart(movie);
         tickets = await CartService.GetAllTickets();
+    }
+
+    void EditTicket(int movieId)
+    {
+        NavigationManager.NavigateTo($"/update-ticket/{movieId}");
     }
 }

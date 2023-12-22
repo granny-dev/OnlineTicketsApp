@@ -1,7 +1,7 @@
 {
   "entryAssembly": "OnlineTickets.Client",
   "resources": {
-    "hash": "sha256-AUBwM9qMFrqaqncbdKAKlwYgT5zvi8ol6oqk5QxVFPg=",
+    "hash": "sha256-g0KBl+bNfL4PR4EYCQJDzSFfX1XWY9x45rRaEN+Ge8I=",
     "runtime": {
       "dotnet.7.0.14.nz5wv9b6q9.js": "sha256-YWGUknGRzP/fgO6YjvCJKPVQNZAPEd6ll+rHfQEIW+I=",
       "dotnet.timezones.blat": "sha256-t5xviiOQTfAsF0UDhmcyalKiaehUmf/sqJl97tmPM0M=",
@@ -19,6 +19,7 @@
       "Microsoft.AspNetCore.Components.Forms.dll": "sha256-p85TpgJG4JgyaEcSwPMg5usQsPzPBSfXz6JhiPcRdyI=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-fufgcHvsaxvMQe0xlebCB4KKK5bHbz+G6MV9j6Ofd2c=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-5mV7NKOLnKHO3CRk8pySXNbPq+UdrKOgJpjib9h5p14=",
+      "Microsoft.AspNetCore.JsonPatch.dll": "sha256-J0CCV8pzxRp3B8T2pe0LK0gv9PCsQJHhDKAuvqiYfQU=",
       "Microsoft.AspNetCore.Metadata.dll": "sha256-buRnUKP2Y+yAMrKqT4KYoO4XIXWzcrFuuyI8SeadeTU=",
       "Microsoft.Extensions.Configuration.dll": "sha256-PqQvp77oZ4+uuy2ElXk8AU9I6RfZSf18UGTrd4rulOo=",
       "Microsoft.Extensions.Configuration.Abstractions.dll": "sha256-CnS3b9EMFQmETBUVEgtcron4DBsfFdcVt3zfCP6Uflg=",
@@ -36,6 +37,7 @@
       "Microsoft.Extensions.Primitives.dll": "sha256-q4ruoDSCjV/QJY9ZkzV6uxvEvZUVrDbyUjU3SSh5SlE=",
       "Microsoft.JSInterop.dll": "sha256-tDUEq1bRgkbwPRKdclDqQy6f2l2zgHm+84KImibIOF8=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-jZp0x8/BJDWy8XWsxYJaiGXW3zObZi90AYiYGjhemMU=",
+      "Newtonsoft.Json.dll": "sha256-IsZJ91/OW+fHzNqIgEc7Y072ns8z9dGritiSyvR9Wgc=",
       "System.IO.Pipelines.dll": "sha256-P/MqD0fCBd5bgTM16JC1QC/Zz7s+CwViyzmDFkBG4/c=",
       "Microsoft.CSharp.dll": "sha256-XmCZ+Cfuw5py6Q1x16Nt5nVc8OQo+i7gBxjkydpKQUo=",
       "Microsoft.VisualBasic.Core.dll": "sha256-ed2zYwDkMhsA156oZD4+3/0ZGN6SxYqS0dNSMMKvpyw=",
@@ -205,12 +207,12 @@
       "mscorlib.dll": "sha256-YcsJInaT/kw3Vrm+SESegPxvT/Lr9RE6rE/KnxWIIc0=",
       "netstandard.dll": "sha256-TztlSRjADgiEABbiAMdWZpHrUVd8wnRtQRAvlwmRP/4=",
       "System.Private.CoreLib.dll": "sha256-BAhrZ8Zg3cJKQipxdzqQo+9jtPkOkRx1ou3oIhDohtk=",
-      "OnlineTickets.Shared.dll": "sha256-4xjCPcGL+wIMt0OyqMFdqRPw/gZfr/IauuQi7ZYPQZo=",
-      "OnlineTickets.Client.dll": "sha256-sPgc62YlPC9kfzNs3PYU67vqrL+YcjIsYoXrRjDXWjw="
+      "OnlineTickets.Shared.dll": "sha256-4pQu/820pNvR1NsWbQ5U6F/AS2/defP4Bd9vD9imtH4=",
+      "OnlineTickets.Client.dll": "sha256-9e5gC2G3yIUnW8SEO4bTTYFgf/W1rV8YAH77qk4iEuw="
     },
     "pdb": {
-      "OnlineTickets.Shared.pdb": "sha256-xzyDZfmDW9hb6YQbX/xjji7yswkn7GfJj930ET9zv5I=",
-      "OnlineTickets.Client.pdb": "sha256-5ZJNF7sF3iDPyY+UOuMrgQls/tAOpsWradCtYd/11rk="
+      "OnlineTickets.Shared.pdb": "sha256-92biQ10UVCqC7JlN7MyUBmRwh7ltX21n4Y/yXEH3HBg=",
+      "OnlineTickets.Client.pdb": "sha256-Q40LSYIb6HdThl9+bQgqqyUfZuAdbzEzZihCevyDn+c="
     },
     "runtimeAssets": {
       "dotnet.wasm": {

@@ -50,6 +50,8 @@
     [Parameter]
     public int ProducerId{ get; set; }
 
+    List<Movie> allMovies = new List<Movie>();
+
     Producer? producer;
     List<Movie> producerMovies = new List<Movie>();
 
@@ -57,9 +59,9 @@
     {
         producer = await ProducerService.GetProducerById(ProducerId);
 
-       await MovieService.GetMoviesList();
+      allMovies = await MovieService.GetMoviesList();
 
-        foreach (var movie in MovieService.Movies)
+        foreach (var movie in allMovies)
         {
             if (movie.ProducerId == ProducerId)
             {

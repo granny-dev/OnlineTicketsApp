@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using OnlineTickets.Server.Repositories.MovieRepositiries;
 using OnlineTickets.Shared;
@@ -22,6 +23,7 @@ namespace OnlineTickets.Server.Controllers
             return Ok(await _repository.GetAllMoviesAsync());
         }
 
+
         [HttpGet("{movieId:int}")]
         public async Task<ActionResult<Movie>> GetMovieByIdAsync(int movieId)
         {
@@ -32,22 +34,21 @@ namespace OnlineTickets.Server.Controllers
         [HttpPost]
         public async Task<ActionResult<Movie>> AddMovieAsync(Movie movie)
         {
-            return Ok( await _repository.AddMovieAsync(movie));
+            return Ok(await _repository.AddMovieAsync(movie));
         }
 
         [HttpPut("{movieId:int}")]
-        public async Task<ActionResult<Movie>> UpdateMovieASync(Movie movie, int movieId)
+        public async Task<ActionResult<Movie>> UpdateMovieASync(Movie movie)
         {
-            movie.MovieId = movieId;
             await _repository.UpdateMovieAsync(movie);
             return Ok(movie);
         }
 
-        [HttpDelete("{movieId:int}")]
-        public async Task<ActionResult<Movie>> DeleteMovieAsync(int movieId)
-        {
-            await _repository.DeleteMovieAsync(movieId);
-            return NoContent();
+        [HttpPatch("{movieId:int}")]
+        public async Task<ActionResult> UpdateReservedAsync(int movieId, int reserved)
+        {            
+            await _repository.UpdateReservedAsync(movieId, reserved);
+            return Ok(movieId);
         }
     }
 

@@ -11,8 +11,6 @@ namespace OnlineTickets.Server.Data
         public DbSet<Cinema> Cinemas { get; set; }
         public DbSet<Movie> Movies { get; set; }
         public DbSet<Producer> Producers { get; set; }
-        public DbSet<Place> Places { get; set; }
-        public DbSet<Stats> Stats { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -137,8 +135,9 @@ namespace OnlineTickets.Server.Data
                     ProducerName = "Chris Meledandri",
                     CinemaId = 1,
                     CinemaName = "Blokbaster",
-                    StartDate = DateTime.Now,
-                    EndDate = DateTime.Now.AddDays(7),
+                    StartDate = new DateTime(2024 ,2,2),
+                    EndDate = new DateTime(2024 ,2,11),
+                    Reserved = 10,
                     Price = 20
 
                 },
@@ -154,8 +153,9 @@ namespace OnlineTickets.Server.Data
                     ProducerName = "Charles Martin Smith",
                     CinemaId = 2,
                     CinemaName = "Cinema Citi",
-                    StartDate = DateTime.Now.AddDays(3),
-                    EndDate = DateTime.Now.AddDays(10),
+                    StartDate = new DateTime(2024 ,2,9),
+                    EndDate = new DateTime(2024 ,2,18),
+                    Reserved = 10,
                     Price = 25
 
                 },
@@ -171,8 +171,9 @@ namespace OnlineTickets.Server.Data
                     ProducerName = "Paul Feig",
                     CinemaId = 3,
                     CinemaName = "Butterfly Cinema",
-                    StartDate = DateTime.Now.AddDays(7),
-                    EndDate = DateTime.Now.AddDays(14),
+                    StartDate = new DateTime(2024 ,2,2),
+                    EndDate = new DateTime(2024 ,2,11),
+                    Reserved = 10,
                     Price = 22
 
                 },
@@ -188,8 +189,9 @@ namespace OnlineTickets.Server.Data
                     ProducerName = "Christopher Nolan",
                     CinemaId = 1,
                     CinemaName = "Blokbaster",
-                    StartDate = DateTime.Now.AddDays(2),
-                    EndDate = DateTime.Now.AddDays(9),
+                    StartDate = new DateTime(2024 ,2,9),
+                    EndDate = new DateTime(2024 ,2,18),
+                    Reserved = 10,
                     Price = 28
 
                 },
@@ -205,8 +207,9 @@ namespace OnlineTickets.Server.Data
                     ProducerName = "Greta Gerwig",
                     CinemaId = 2,
                     CinemaName = "Cinema Citi",
-                    StartDate = DateTime.Now,
-                    EndDate = DateTime.Now.AddDays(7),
+                    StartDate = new DateTime(2024 ,2,2),
+                    EndDate = new DateTime(2024 ,2,11),
+                    Reserved = 10,
                     Price = 24
 
                 },
@@ -222,8 +225,9 @@ namespace OnlineTickets.Server.Data
                     ProducerName = "Aaron Horvath",
                     CinemaId = 3,
                     CinemaName = "Butterfly Cinema",
-                    StartDate = DateTime.Now.AddDays(1),
-                    EndDate = DateTime.Now.AddDays(8),
+                    StartDate = new DateTime(2024 ,2,9),
+                    EndDate = new DateTime(2024 ,2,18),
+                    Reserved = 10,
                     Price = 27
 
                 }
@@ -276,47 +280,6 @@ namespace OnlineTickets.Server.Data
                 }
             };
             modelBuilder.Entity<Producer>().HasData(Producers);
-
-            List<Place> Places = new()
-            {
-                new Place
-                {
-                    PlaceId = 1,
-                    PlaceName = "",
-                },
-                new Place
-                {
-                    PlaceId = 2,
-                    PlaceName = "FirstRow"
-                },
-                new Place
-                {
-                    PlaceId = 3,
-                    PlaceName = "Row"
-                }
-            };
-            modelBuilder.Entity<Place>().HasData(Places);
-
-            modelBuilder.SharedTypeEntity<Dictionary<string, object>>("MoviePlace").HasData(
-                new {MoviesMovieId = 1, PlacesPlaceId = 1},
-                new{MoviesMovieId = 1, PlacesPlaceId = 2},
-                new {MoviesMovieId = 1, PlacesPlaceId = 3},
-                new {MoviesMovieId = 2, PlacesPlaceId = 1},
-                new {MoviesMovieId = 2, PlacesPlaceId = 2},
-                new {MoviesMovieId = 2, PlacesPlaceId = 3},
-                new {MoviesMovieId = 3, PlacesPlaceId = 1},
-                new {MoviesMovieId = 3, PlacesPlaceId = 2},
-                new {MoviesMovieId = 3, PlacesPlaceId = 3},
-                new {MoviesMovieId = 4, PlacesPlaceId = 1},
-                new {MoviesMovieId = 4, PlacesPlaceId = 2},
-                new {MoviesMovieId = 4, PlacesPlaceId = 3},
-                new {MoviesMovieId = 5, PlacesPlaceId = 1},
-                new {MoviesMovieId = 5, PlacesPlaceId = 2},
-                new {MoviesMovieId = 5, PlacesPlaceId = 3},
-                new {MoviesMovieId = 6, PlacesPlaceId = 1},
-                new {MoviesMovieId = 6, PlacesPlaceId = 2},
-                new { MoviesMovieId = 6,PlacesPlaceId = 3}
-                );
         }
         
                

@@ -60,6 +60,8 @@
     [Parameter]
     public int CinemaId{ get; set; }
 
+    List<Movie> allMovies = new List<Movie>();
+
     Cinema? cinema;
     List<Movie> cinemaMovies = new List<Movie>();
 
@@ -67,9 +69,9 @@
     {
         cinema = await CinemaService.GetCinemaById(CinemaId);
 
-       await MovieService.GetMoviesList();
+      allMovies = await MovieService.GetMoviesList();
 
-        foreach (var movie in MovieService.Movies)
+        foreach (var movie in allMovies)
         {
             if (movie.CinemaId == CinemaId)
             {
