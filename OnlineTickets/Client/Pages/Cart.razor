@@ -51,12 +51,18 @@ else
         <div class="m-2">
             <b>Total @tickets.Sum(t => t.Qty) tickets: </b>$@tickets.Sum(t =>t.Price * t.Qty)
         </div>
+        <button class="btn btn-outline-primary my-3" @onclick="ProceedToCheckout" style="width:200px">
+            <i class="oi oi-credit-card"></i>
+            Proceed to checkout
+        </button>
+        
     </div>
 }
 
 @code {
 
     List<Movie> tickets = new List<Movie>();
+    Movie ticket = new();
 
     protected override async Task OnInitializedAsync()
     {
@@ -72,5 +78,11 @@ else
     void EditTicket(int movieId)
     {
         NavigationManager.NavigateTo($"/update-ticket/{movieId}");
+    }
+
+    async Task ProceedToCheckout()
+    {
+        string checkoutUrl = await CartService.Checkout();
+        NavigationManager.NavigateTo(checkoutUrl);
     }
 }

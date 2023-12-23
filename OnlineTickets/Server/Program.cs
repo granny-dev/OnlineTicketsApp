@@ -4,8 +4,11 @@ using Microsoft.OpenApi.Models;
 using OnlineTickets.Server.Data;
 using OnlineTickets.Server.Repositories.ActorRepositories;
 using OnlineTickets.Server.Repositories.CinemaRepositories;
+using OnlineTickets.Server.Repositories.EmailRepositories;
 using OnlineTickets.Server.Repositories.MovieRepositiries;
+using OnlineTickets.Server.Repositories.PaymentRepositories;
 using OnlineTickets.Server.Repositories.ProducerRepositories;
+using Stripe;
 using System;
 
 namespace OnlineTickets
@@ -28,10 +31,14 @@ namespace OnlineTickets
 
             builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(builder.Configuration.GetConnectionString("Default")));
 
+            StripeConfiguration.ApiKey = builder.Configuration["Stripe:SecretKey"];
+
             builder.Services.AddScoped<IActorRepository, ActorRepository>();
             builder.Services.AddScoped<ICinemaRepository, CinemaRepository>();
             builder.Services.AddScoped<IMovieRepository, MovieRepository>();
             builder.Services.AddScoped<IProducerRepository, ProducerRepository>();
+            builder.Services.AddScoped<IEmailRepository, EmailRepository>();
+            builder.Services.AddScoped<IPaymentRepository, PaymentRepository>();
 
             var app = builder.Build();
 

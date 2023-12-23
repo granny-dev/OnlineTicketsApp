@@ -22,4 +22,6 @@ public class Movie
     public int ProducerId { get; set; }
     public string ProducerName { get; set;} = string.Empty;
    public string PlaceName {  get; set; } = string.Empty;
+    public string CustomerEmail { get; set; } = string.Empty;
+    public string PaymentStatus { get; set; } = string.Empty;
 }

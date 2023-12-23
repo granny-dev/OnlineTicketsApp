@@ -182,6 +182,10 @@ namespace OnlineTickets.Server.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("CustomerEmail")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("TEXT");
 
@@ -198,6 +202,10 @@ namespace OnlineTickets.Server.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("MovieName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PaymentStatus")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -245,18 +253,20 @@ namespace OnlineTickets.Server.Migrations
                             MovieId = 1,
                             CinemaId = 1,
                             CinemaName = "Blokbaster",
+                            CustomerEmail = "",
                             EndDate = new DateTime(2024, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             MovieCategory = "Cartoon",
                             MovieDescription = "The plot follows the Grinch and his pet dog Max who plan to stop Whoville's Christmas celebration by stealing all the town's decorations and gifts.",
                             MovieImageUrl = "https://upload.wikimedia.org/wikipedia/en/4/4f/The_Grinch%2C_final_poster.jpg",
                             MovieName = "The Grinch",
+                            PaymentStatus = "",
                             PlaceName = "",
                             Price = 20m,
                             ProducerId = 6,
                             ProducerName = "Chris Meledandri",
                             Qty = 0,
                             Reserved = 10,
-                            SelectedDate = new DateTime(2023, 12, 22, 17, 36, 6, 132, DateTimeKind.Local).AddTicks(5749),
+                            SelectedDate = new DateTime(2023, 12, 22, 22, 35, 29, 938, DateTimeKind.Local).AddTicks(4375),
                             StartDate = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "Available"
                         },
@@ -265,18 +275,20 @@ namespace OnlineTickets.Server.Migrations
                             MovieId = 2,
                             CinemaId = 2,
                             CinemaName = "Cinema Citi",
+                            CustomerEmail = "",
                             EndDate = new DateTime(2024, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             MovieCategory = "Family",
                             MovieDescription = "James looks back at the last Christmas he and Bob spent scraping a living on the streets and how Bob helped him through one of his toughest times – providing strength, friendship and inspiration – and ultimately teaching each other about the true meaning of Christmas spirit along the way.",
                             MovieImageUrl = "https://upload.wikimedia.org/wikipedia/en/thumb/4/4b/Christmas_gift_from_bob_ver2.jpg/330px-Christmas_gift_from_bob_ver2.jpg",
                             MovieName = "A Gift from Bob",
+                            PaymentStatus = "",
                             PlaceName = "",
                             Price = 25m,
                             ProducerId = 5,
                             ProducerName = "Charles Martin Smith",
                             Qty = 0,
                             Reserved = 10,
-                            SelectedDate = new DateTime(2023, 12, 22, 17, 36, 6, 132, DateTimeKind.Local).AddTicks(5828),
+                            SelectedDate = new DateTime(2023, 12, 22, 22, 35, 29, 938, DateTimeKind.Local).AddTicks(4452),
                             StartDate = new DateTime(2024, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "Available"
                         },
@@ -285,18 +297,20 @@ namespace OnlineTickets.Server.Migrations
                             MovieId = 3,
                             CinemaId = 3,
                             CinemaName = "Butterfly Cinema",
+                            CustomerEmail = "",
                             EndDate = new DateTime(2024, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             MovieCategory = "Romance",
                             MovieDescription = "Katarina \"Kate\" Andrich, a young aspiring singer, bounces around between her friends’ places, and has a dead-end job as an elf at a year-round Christmas shop in Central London, whose strict but good-hearted Chinese owner calls herself \"Santa\". Whilst at work, she notices a man outside staring upward and strikes up a conversation, learning that his name is Tom Webster and his oft-repeated life wisdom is to \"look up\" for things that others seldom observe.",
                             MovieImageUrl = "https://upload.wikimedia.org/wikipedia/en/0/0c/Last_Christmas_poster.jpeg",
                             MovieName = "Last Christmas",
+                            PaymentStatus = "",
                             PlaceName = "",
                             Price = 22m,
                             ProducerId = 4,
                             ProducerName = "Paul Feig",
                             Qty = 0,
                             Reserved = 10,
-                            SelectedDate = new DateTime(2023, 12, 22, 17, 36, 6, 132, DateTimeKind.Local).AddTicks(5832),
+                            SelectedDate = new DateTime(2023, 12, 22, 22, 35, 29, 938, DateTimeKind.Local).AddTicks(4456),
                             StartDate = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "Available"
                         },
@@ -305,18 +319,20 @@ namespace OnlineTickets.Server.Migrations
                             MovieId = 4,
                             CinemaId = 1,
                             CinemaName = "Blokbaster",
+                            CustomerEmail = "",
                             EndDate = new DateTime(2024, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             MovieCategory = "Drama",
                             MovieDescription = "Based on the 2005 biography American Prometheus by Kai Bird and Martin J. Sherwin, the film chronicles the career of Oppenheimer, with the story predominantly focusing on his studies, his direction of the Manhattan Project during World War II, and his eventual fall from grace due to his 1954 security hearing.",
                             MovieImageUrl = "https://upload.wikimedia.org/wikipedia/en/4/4a/Oppenheimer_%28film%29.jpg",
                             MovieName = "Oppenheimer",
+                            PaymentStatus = "",
                             PlaceName = "",
                             Price = 28m,
                             ProducerId = 3,
                             ProducerName = "Christopher Nolan",
                             Qty = 0,
                             Reserved = 10,
-                            SelectedDate = new DateTime(2023, 12, 22, 17, 36, 6, 132, DateTimeKind.Local).AddTicks(5835),
+                            SelectedDate = new DateTime(2023, 12, 22, 22, 35, 29, 938, DateTimeKind.Local).AddTicks(4459),
                             StartDate = new DateTime(2024, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "Available"
                         },
@@ -325,18 +341,20 @@ namespace OnlineTickets.Server.Migrations
                             MovieId = 5,
                             CinemaId = 2,
                             CinemaName = "Cinema Citi",
+                            CustomerEmail = "",
                             EndDate = new DateTime(2024, 2, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             MovieCategory = "Comedy",
                             MovieDescription = "Based on the eponymous fashion dolls by Mattel, it is the first live-action Barbie film after numerous computer-animated films and specials.",
                             MovieImageUrl = "https://upload.wikimedia.org/wikipedia/en/0/0b/Barbie_2023_poster.jpg",
                             MovieName = "Barbie",
+                            PaymentStatus = "",
                             PlaceName = "",
                             Price = 24m,
                             ProducerId = 2,
                             ProducerName = "Greta Gerwig",
                             Qty = 0,
                             Reserved = 10,
-                            SelectedDate = new DateTime(2023, 12, 22, 17, 36, 6, 132, DateTimeKind.Local).AddTicks(5839),
+                            SelectedDate = new DateTime(2023, 12, 22, 22, 35, 29, 938, DateTimeKind.Local).AddTicks(4462),
                             StartDate = new DateTime(2024, 2, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "Available"
                         },
@@ -345,18 +363,20 @@ namespace OnlineTickets.Server.Migrations
                             MovieId = 6,
                             CinemaId = 3,
                             CinemaName = "Butterfly Cinema",
+                            CustomerEmail = "",
                             EndDate = new DateTime(2024, 2, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             MovieCategory = "Comedy",
                             MovieDescription = "Italian-American brothers Mario and Luigi have recently opened a plumbing business in Brooklyn, to the derision of their ex-employer Spike and the disapproval of their father. After seeing a significant water main leak on the news, Mario and Luigi go underground to fix it but are sucked into a Warp Pipe and separated.",
                             MovieImageUrl = "https://upload.wikimedia.org/wikipedia/en/4/44/The_Super_Mario_Bros._Movie_poster.jpg",
                             MovieName = "The Super Mario Bros. Movie",
+                            PaymentStatus = "",
                             PlaceName = "",
                             Price = 27m,
                             ProducerId = 1,
                             ProducerName = "Aaron Horvath",
                             Qty = 0,
                             Reserved = 10,
-                            SelectedDate = new DateTime(2023, 12, 22, 17, 36, 6, 132, DateTimeKind.Local).AddTicks(5842),
+                            SelectedDate = new DateTime(2023, 12, 22, 22, 35, 29, 938, DateTimeKind.Local).AddTicks(4465),
                             StartDate = new DateTime(2024, 2, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Status = "Available"
                         });

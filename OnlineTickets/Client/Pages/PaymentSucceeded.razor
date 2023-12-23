@@ -1,0 +1,96 @@
+﻿@page "/payment-succeeded"
+
+@inject ICartService CartService
+@inject NavigationManager NavigationManager
+@inject IToastService ToastService
+
+<h3>Cart</h3>
+
+@if(tickets == null)
+{
+    <span>No tickets here... Maybe you should buy one?</span>
+}
+else
+{
+    <div class="row">
+        @foreach (var movie in tickets)
+        {
+            <div class="col-md-6 border-primary mb-2">
+                <div class="card mb-2" style="width:400px; height:400px;">
+                    <div class="row g-0">
+                        <div class="col-md-12">
+                            <div class="card-header text-white bg-info">
+                                <p class="card-text">
+                                    <h5 class=" card-title">@movie.MovieName</h5>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                                <img class="media-img" src="@movie.MovieImageUrl" alt="@movie.MovieName" style="width:200px;" />
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-body">
+                                <p class="card-text"><b>Cinema: </b>@movie.CinemaName</p>
+                                <p class="card-text"><b>Category: </b>@movie.MovieCategory</p>
+                                <p class="card-text"><b>Price: </b>$@movie.Price</p>
+                                <p class="card-text"><b>Quantity: </b>@movie.Qty</p>
+                                <p class="card-text"><b>Total Price: </b>$@(movie.Price * movie.Qty)</p>
+                                <p class="card-text"><b>Date: </b>@movie.SelectedDate.ToShortDateString()</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="m-2">
+            <b>Total @tickets.Sum(t => t.Qty) tickets: </b>$@tickets.Sum(t =>t.Price * t.Qty)
+        </div>
+        
+    </div>
+}
+
+@code {
+
+    List<Movie> tickets = new List<Movie>();
+
+    string customerEmail = "";
+    protected override async Task OnInitializedAsync()
+    {
+        tickets = await CartService.GetAllTickets();
+        foreach(var ticket in tickets)
+        {
+            customerEmail = ticket.CustomerEmail;
+        }
+
+        SendEmail();
+
+        ToastService.ShowSuccess($" Your tickets were sent to {customerEmail}!");
+
+        await CartService.EmptyCart();
+    }
+
+    void SendEmail()
+    {
+        //List<string> ticketsToEmail = new();
+        string emailBody = "";
+
+        foreach (var ticket in tickets)
+        {
+            emailBody = emailBody + $"<p><b>Movie: <b>{ticket.MovieName}</p>";
+            emailBody = emailBody + $"<p><b>Cinema: </b>{ticket.CinemaName}</p>";
+            emailBody = emailBody + $"<p><b>Quantity: </b>{ticket.Qty}</p>";
+            emailBody = emailBody + $"<p><b>Total Price: </b>${ticket.Price * ticket.Qty}</p>";
+            emailBody = emailBody + $"<p><b>Date: </b>{ticket.SelectedDate.ToShortDateString()}</p>";
+
+            //ticketsToEmail.Add(emailBody);
+        }
+        emailBody = emailBody + "<p>Thank you for your purchase!</p>";
+        emailBody = emailBody + "<p>Wrestling Shows Club</p>";
+        //ticketsToEmail.Add(emailBody);
+
+        CartService.SendEmail(customerEmail, "Your Tickets", emailBody);
+        
+    }
+
+}

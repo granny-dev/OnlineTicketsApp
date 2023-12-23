@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OnlineTickets.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d72fc345eb8c27fadb5753e625bba373aa3d4df3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6bb3ce30a7f1fbff0f1e96317fe97723cb7219a6")]
 [assembly: System.Reflection.AssemblyProductAttribute("OnlineTickets.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OnlineTickets.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

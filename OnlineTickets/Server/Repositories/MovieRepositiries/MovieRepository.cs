@@ -101,5 +101,7 @@ namespace OnlineTickets.Server.Repositories.MovieRepositiries
             }
             return movie.Status;
         }
+
+       
     }
 }

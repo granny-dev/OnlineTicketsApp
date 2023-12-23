@@ -4,18 +4,20 @@
 
 @implements IDisposable
 
-<a href="cart" class="btn btn-info">
+
+
+<a href="cart" class="btn btn-outline-secondary mx-3">
     <i class="oi oi-cart"></i>
     Cart
     <span class="badge">@GetProductCount()</span>
 </a>
 
 @code {
+    Movie selectedMovie { get; set; } = new();
 
-    protected override  async Task OnInitializedAsync()
+    protected override void OnInitialized()
     {
         CartService.OnChange += StateHasChanged;
-
     }
 
     public void Dispose()

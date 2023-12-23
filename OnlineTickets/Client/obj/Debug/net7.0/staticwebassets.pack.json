@@ -81,6 +81,10 @@
       "PackagePath": "staticwebassets\\icon-512.png"
     },
     {
+      "Id": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\wwwroot\\images\\wp.jpg",
+      "PackagePath": "staticwebassets\\images\\wp.jpg"
+    },
+    {
       "Id": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },

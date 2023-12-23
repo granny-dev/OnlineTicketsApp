@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "4KA/QNeAa2ZRcGemoY+ABWuaJLlieYVZhvikMK46y24=",
+  "Hash": "I5ep5glhsCL5CYgmq3Ou8UhgDT3JHHDWErK7MkH23J0=",
   "Source": "OnlineTickets.Client",
   "BasePath": "/",
   "Mode": "Root",
@@ -8337,6 +8337,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\icon-512.png"
+    },
+    {
+      "Identity": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\wwwroot\\images\\wp.jpg",
+      "SourceId": "OnlineTickets.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "images/wp.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\wp.jpg"
     },
     {
       "Identity": "D:\\llv\\Github\\OnlineTicketsApp\\OnlineTickets\\Client\\wwwroot\\index.html",

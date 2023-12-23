@@ -2,6 +2,7 @@
 
 @using OnlineTickets.Client.Services.MovieServices
 @inject IActorService ActorService
+@inject IMovieService MovieService
 
 @if(actor is not null)
 {
@@ -18,6 +19,27 @@
                 <h4>@actor.ActorName</h4>
             </a>
             <p>@actor.ActorBiography</p>
+            <h5 class="my-2"><b>@actor.ActorName`s Movies</b></h5>
+            <ul class="list-unstyled">
+                @foreach (var movie in actorMovies)
+                {
+                    <li class="media my-3">
+                        <div class="media-img-wrapper mr-2">
+                            <a href="/movie/@movie.MovieId">
+                                <img class="media-img" src="@movie.MovieImageUrl" alt="@movie.MovieName" />
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <a href="/movie/@movie.MovieId">
+                                <h4>@movie.MovieName</h4>
+                            </a>
+                            <h5>@movie.MovieCategory</h5>
+                            <p>@movie.MovieDescription</p>
+
+                        </div>
+                    </li>
+                }
+            </ul>
         </div>
     </div>
 }
@@ -29,8 +51,22 @@
     public int ActorId{ get; set; }
     Actor? actor;
 
+    List<Movie> allMovies = new List<Movie>();
+
+    List<Movie> actorMovies = new List<Movie>();
+
     protected override async Task OnInitializedAsync()
     {
         actor = await ActorService.GetActorById(ActorId);
+
+        allMovies = await MovieService.GetMoviesList();
+
+        foreach (var movie in allMovies)
+        {
+            if (movie.MovieId == actor.MovieId)
+            {
+                actorMovies.Add(movie);
+            }
+        }
     }
 }

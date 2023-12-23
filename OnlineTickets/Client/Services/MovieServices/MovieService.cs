@@ -79,4 +79,14 @@ public class MovieService : IMovieService
     {
         var result = await _httpClient.PatchAsJsonAsync<Movie>($"/movie/{movieId}", new Movie {Reserved = reserved});
     }
+
+    public async Task<List<Movie>> SearchMovie(string searchMovie)
+    {
+        var result = await _httpClient.GetFromJsonAsync<List<Movie>>($"/movie/Search/{searchMovie}");
+        if(result == null)
+        {
+            return new List<Movie>();
+        }
+        return result;
+    }
 }

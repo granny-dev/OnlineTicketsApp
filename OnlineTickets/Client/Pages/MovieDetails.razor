@@ -37,17 +37,22 @@
             <h5><b>Reserved: </b>@movie.Reserved</h5>
 
             <div class="form-group my-2">
+                <label for="email"><b>Enter your email</b></label>
+                <InputText id="email" @bind-Value="movie.CustomerEmail" class="form-control" style="width:250px;"></InputText>
                 <label for="date"><b>Select date</b></label>
-                <InputDate id="date" @bind-Value="movie.SelectedDate" class="form-control" min="@movie.StartDate.ToString("yyyy-MM-dd")" max="@movie.EndDate.ToString("yyyy-MM-dd")" />
+                <InputDate id="date" @bind-Value="movie.SelectedDate" class="form-control" style="width:150px;" min="@movie.StartDate.ToString("yyyy-MM-dd")" max="@movie.EndDate.ToString("yyyy-MM-dd")" />
 
                 <label for="dropdown"><b>Select row</b></label>
-                <InputSelect id="dropdown" class="form-control edit-active" @bind-Value="movie.PlaceName">
+                <InputSelect id="dropdown" class="form-control edit-active" style="width:150px;" 
+                    @bind-Value="movie.PlaceName">
                     <option value="">Select Row</option>
                     <option value="FirstRow">FirstRow</option>
                     <option value="Row">Row</option>
                 </InputSelect>
                 <label for="qty"><b>How many tickets?</b></label>
-                <InputNumber id="qty" @bind-Value="movie.Qty" class="form-control"></InputNumber>
+                <InputNumber id="qty" @bind-Value="movie.Qty" class="form-control" style="width:150px;">
+
+                </InputNumber>
             </div>
             @if (movie.PlaceName == "FirstRow")
             {
@@ -101,7 +106,7 @@
     List<Actor> movieActors = new List<Actor>();
 
 
-    protected override async Task OnInitializedAsync()
+    protected override async Task OnParametersSetAsync()
     {
         movie = await MovieService.GetMovieById(MovieId);
         if(movie.StartDate >= DateTime.Now)

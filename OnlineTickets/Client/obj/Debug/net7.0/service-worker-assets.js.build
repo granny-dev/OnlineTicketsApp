@@ -1,7 +1,7 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-HAdeZrYN7P2vx1f1rAonLC7hf6vGBAth40ebNCVxtQg=",
+      "hash": "sha256-THUqsK6Rh7KTPu3FfIVyzgTGn4dT39WanDsoCtTh9Wo=",
       "url": "css\/app.css"
     },
     {
@@ -61,7 +61,11 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-cZ1hzHXLZtJB1rnIcA3vTFaxhHRPOSC13NJzPbOPVVE=",
+      "hash": "sha256-j9lgEtHVhbmPDH1Hud2eehkHFA5xsCFGftrwess6q4c=",
+      "url": "images\/wp.jpg"
+    },
+    {
+      "hash": "sha256-v+TeCEyZbE9W9ui1NoVyWBsfihee0v9rN2HcOFCHfnk=",
       "url": "index.html"
     },
     {
@@ -885,23 +889,23 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-4pQu\/820pNvR1NsWbQ5U6F\/AS2\/defP4Bd9vD9imtH4=",
+      "hash": "sha256-+luC8NpuHvjNrazFnT46M5fvyokx25UqkE9j175e6OY=",
       "url": "_framework\/OnlineTickets.Shared.dll"
     },
     {
-      "hash": "sha256-92biQ10UVCqC7JlN7MyUBmRwh7ltX21n4Y\/yXEH3HBg=",
+      "hash": "sha256-rx6wxEZCN1g11l7wsizn4xASi71\/teZeKvkieYxgcpQ=",
       "url": "_framework\/OnlineTickets.Shared.pdb"
     },
     {
-      "hash": "sha256-XOAuF+MD5va7m0nxjd4QvYpYmvkGEcfoj3pU1Uudq9Y=",
+      "hash": "sha256-mYMITb2ZDvpfiOf1gl5foXgSJqVVVTkX7CQmDiD7BOw=",
       "url": "_framework\/OnlineTickets.Client.dll"
     },
     {
-      "hash": "sha256-GoWew7DovKHulsRUGMRppGtbbCrCYILHXyrCZJiSazI=",
+      "hash": "sha256-4zGRKV0s2tvFnEqc2gsjCyEV5LyM28ygN5yUBCYpGng=",
       "url": "_framework\/OnlineTickets.Client.pdb"
     },
     {
-      "hash": "sha256-MdCxYY\/ukn7JPk3jRgGmunEsw0VvNOvxvtetV9HoboY=",
+      "hash": "sha256-IKAsKZlyP8TyvG008JBP7r1uPXL2N\/+y11b9Fe6na60=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -909,5 +913,5 @@
       "url": "_content\/Blazored.Toast\/Blazored.Toast.bundle.scp.css"
     }
   ],
-  "version": "R6W1WCnu"
+  "version": "JxlAGQ5H"
 };
