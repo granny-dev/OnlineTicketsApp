@@ -50,43 +50,11 @@ public class MovieService : IMovieService
 
     public async Task UpdateMovie(Movie movie)
     {
-        var movieToUpdate = new Movie();
-        
-           movieToUpdate. MovieId = movie.MovieId;
-            movieToUpdate.MovieName = movie.MovieName;
-            movieToUpdate.MovieDescription = movie.MovieDescription;
-            movieToUpdate.MovieCategory = movie.MovieCategory;
-            movieToUpdate.MovieImageUrl = movie.MovieImageUrl;
-            movieToUpdate.SelectedDate = movie.SelectedDate;
-            movieToUpdate.StartDate = movie.StartDate;
-            movieToUpdate.EndDate = movie.EndDate;
-            movieToUpdate.Reserved = movie.Reserved;
-            movieToUpdate.Status = movie.Status;
-            movieToUpdate.CinemaId = movie.CinemaId;
-            movieToUpdate.CinemaName = movie.CinemaName;
-            movieToUpdate.ProducerId = movie.ProducerId;
-            movieToUpdate.ProducerName = movie.ProducerName;
-            if(movie.PlaceName == "FirstRow")
-            {
-                movieToUpdate.Price = movie.Price/2;
-            }
-
-        
-        var result = await _httpClient.PutAsJsonAsync($"/movie/{movie.MovieId}", movieToUpdate);
+        var result = await _httpClient.PutAsJsonAsync($"/movie/{movie.MovieId}", movie);
     }
 
-    public async Task UpdateReserved (int movieId, int reserved)
+    public async Task UpdateReserved(int movieId, int reserved)
     {
-        var result = await _httpClient.PatchAsJsonAsync<Movie>($"/movie/{movieId}", new Movie {Reserved = reserved});
-    }
-
-    public async Task<List<Movie>> SearchMovie(string searchMovie)
-    {
-        var result = await _httpClient.GetFromJsonAsync<List<Movie>>($"/movie/Search/{searchMovie}");
-        if(result == null)
-        {
-            return new List<Movie>();
-        }
-        return result;
+        var result = await _httpClient.PatchAsJsonAsync<Movie>($"/movie/{movieId}", new Movie { Reserved = reserved });
     }
 }

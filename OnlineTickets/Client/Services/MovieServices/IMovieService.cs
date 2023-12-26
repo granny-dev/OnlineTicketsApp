@@ -10,6 +10,5 @@ public interface IMovieService
     Task DeleteMovie(int id);
     Task UpdateMovie(Movie movie);
     Task UpdateReserved(int movieId, int reserved);
-    Task<List<Movie>> SearchMovie(string searchMovie);
 
 }

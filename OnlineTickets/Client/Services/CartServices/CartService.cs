@@ -35,8 +35,7 @@ namespace OnlineTickets.Client.Services.CartServices
             {
                 cart.Add(movie);
                 movie.Reserved += movie.Qty;
-                //await _movieService.UpdateReserved(movie.MovieId, movie.Reserved);
-                await _movieService.UpdateMovie(movie);
+                await _movieService.UpdateReserved(movie.MovieId, movie.Reserved);
                 await _localStorageService.SetItemAsync("cart", cart);
                 _toastService.ShowSuccess($"{movie.MovieName} added successfully!");
             }
@@ -95,8 +94,7 @@ namespace OnlineTickets.Client.Services.CartServices
             }
             cart.Remove(ticketToDelete);
             ticketToDelete.Reserved -= ticketToDelete.Qty;
-            //await _movieService.UpdateReserved(ticketToDelete.MovieId, ticketToDelete.Reserved);
-            await _movieService.UpdateMovie(ticketToDelete);
+            await _movieService.UpdateReserved(ticketToDelete.MovieId, ticketToDelete.Reserved);
             await _localStorageService.SetItemAsync("cart", cart);
             _toastService.ShowSuccess($"{movie.MovieName} deleted successfully!");
 

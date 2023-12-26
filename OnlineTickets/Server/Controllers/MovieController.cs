@@ -45,9 +45,9 @@ namespace OnlineTickets.Server.Controllers
         }
 
         [HttpPatch("{movieId:int}")]
-        public async Task<ActionResult> UpdateReservedAsync(int movieId, int reserved)
+        public async Task<ActionResult> UpdateReservedAsync(int movieId, Movie movie)
         {            
-            await _repository.UpdateReservedAsync(movieId, reserved);
+            await _repository.UpdateReservedAsync(movieId, movie.Reserved);
             return Ok(movieId);
         }
     }
