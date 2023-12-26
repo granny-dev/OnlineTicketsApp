@@ -1,7 +1,7 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-THUqsK6Rh7KTPu3FfIVyzgTGn4dT39WanDsoCtTh9Wo=",
+      "hash": "sha256-IOW+jduLPJPjliU3bm\/5M2t7OAIfNotFFvxbpEmi2Os=",
       "url": "css\/app.css"
     },
     {
@@ -897,15 +897,15 @@
       "url": "_framework\/OnlineTickets.Shared.pdb"
     },
     {
-      "hash": "sha256-mYMITb2ZDvpfiOf1gl5foXgSJqVVVTkX7CQmDiD7BOw=",
+      "hash": "sha256-7R4fx8GJjdbLeDIY2iw7I5vYK1RF\/LJp6OWZiA0Fowk=",
       "url": "_framework\/OnlineTickets.Client.dll"
     },
     {
-      "hash": "sha256-4zGRKV0s2tvFnEqc2gsjCyEV5LyM28ygN5yUBCYpGng=",
+      "hash": "sha256-AXDOunOkbk7EJTwUworHAPXFC5Ddv079MkJ1Luv26t0=",
       "url": "_framework\/OnlineTickets.Client.pdb"
     },
     {
-      "hash": "sha256-IKAsKZlyP8TyvG008JBP7r1uPXL2N\/+y11b9Fe6na60=",
+      "hash": "sha256-dUYJ+3Y9IlWGx4o14lXLS5P+FFRe7ln0tvXggK34sFo=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -913,5 +913,5 @@
       "url": "_content\/Blazored.Toast\/Blazored.Toast.bundle.scp.css"
     }
   ],
-  "version": "JxlAGQ5H"
+  "version": "J\/vA+FKt"
 };

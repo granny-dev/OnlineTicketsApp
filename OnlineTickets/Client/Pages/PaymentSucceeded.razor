@@ -72,22 +72,22 @@ else
 
     void SendEmail()
     {
-        //List<string> ticketsToEmail = new();
-        string emailBody = "";
+        string emailBody = "<div>";
 
+        var openListItem = "<li style=\"margin-left: 0;\">";
         foreach (var ticket in tickets)
         {
-            emailBody = emailBody + $"<p><b>Movie: <b>{ticket.MovieName}</p>";
-            emailBody = emailBody + $"<p><b>Cinema: </b>{ticket.CinemaName}</p>";
-            emailBody = emailBody + $"<p><b>Quantity: </b>{ticket.Qty}</p>";
-            emailBody = emailBody + $"<p><b>Total Price: </b>${ticket.Price * ticket.Qty}</p>";
-            emailBody = emailBody + $"<p><b>Date: </b>{ticket.SelectedDate.ToShortDateString()}</p>";
-
-            //ticketsToEmail.Add(emailBody);
+            emailBody += "<ul style=\"border:1px solid gray; padding: 1em; min-width: 10em; max-width: 25em; width: fit-content; margin-bottom: 1em; border-radius: 3px; box-shadow: 1px 1px gray; list-style-type: none;\">";
+            emailBody += $"{openListItem}<b>Movie:</b> {ticket.MovieName}</li>";
+            emailBody += $"{openListItem}<b>Cinema:</b> {ticket.CinemaName}</li>";
+            emailBody += $"{openListItem}<b>Quantity:</b> {ticket.Qty}</li>";
+            emailBody += $"{openListItem}<b>Total Price:</b> ${ticket.Price * ticket.Qty}</li>";
+            emailBody += $"{openListItem}<b>Date:</b> {ticket.SelectedDate.ToShortDateString()}</li>";
+            emailBody += "</ul>";
         }
-        emailBody = emailBody + "<p>Thank you for your purchase!</p>";
-        emailBody = emailBody + "<p>Wrestling Shows Club</p>";
-        //ticketsToEmail.Add(emailBody);
+        emailBody += "</div>";
+        emailBody += "<div>Thank you for your purchase!</div>";
+        emailBody += "<p>Online Movie Tickets</p>";
 
         CartService.SendEmail(customerEmail, "Your Tickets", emailBody);
         
