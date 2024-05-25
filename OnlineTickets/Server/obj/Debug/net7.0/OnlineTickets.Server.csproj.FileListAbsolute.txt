@@ -166,9 +166,9 @@ D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\obj\Debug\net7.0\staticwebas
 D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\obj\Debug\net7.0\staticwebassets\msbuild.buildTransitive.OnlineTickets.Server.props
 D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\obj\Debug\net7.0\staticwebassets.pack.json
 D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\obj\Debug\net7.0\scopedcss\bundle\OnlineTickets.Server.styles.css
-D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\obj\Debug\net7.0\OnlineTickets.Server.csproj.CopyComplete
 D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\obj\Debug\net7.0\OnlineTickets.Server.dll
 D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\obj\Debug\net7.0\refint\OnlineTickets.Server.dll
 D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\obj\Debug\net7.0\OnlineTickets.Server.pdb
 D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\obj\Debug\net7.0\OnlineTickets.Server.genruntimeconfig.cache
 D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\obj\Debug\net7.0\ref\OnlineTickets.Server.dll
+D:\llv\Github\OnlineTicketsApp\OnlineTickets\Server\obj\Debug\net7.0\OnlineTi.438FDDA0.Up2Date
