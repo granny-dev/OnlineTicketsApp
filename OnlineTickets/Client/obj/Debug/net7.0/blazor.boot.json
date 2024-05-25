@@ -1,7 +1,7 @@
 {
   "entryAssembly": "OnlineTickets.Client",
   "resources": {
-    "hash": "sha256-RY3+TdXwddmtGOzBOUA3zBvEWLIYgfTQu1fFHzCTDOU=",
+    "hash": "sha256-uRQ4xw5EemfWpvKVCYf+dHE/Y3p5LtkcfWfvoZmM6KY=",
     "runtime": {
       "dotnet.7.0.19.j2de41mes4.js": "sha256-J9IVsSLjfEIyn/0XKSDWXHMve5eK11v9Aj06G7zPUYo=",
       "dotnet.timezones.blat": "sha256-kK6U8Vo/Xb8zgDH6JtdgAGSA6NUASHhvZoB+hINV0ms=",
@@ -208,11 +208,11 @@
       "netstandard.dll": "sha256-BvougKnccTedjRXZ+Ll94v1qqBt4cr0MqBVYFpGvYLA=",
       "System.Private.CoreLib.dll": "sha256-i0lh8QB6xhbEgqLyhh/0TaUFxAB3Iz2y0VH8m68TIdY=",
       "OnlineTickets.Shared.dll": "sha256-nlIVJXfmKpuBk7r1FJioFtrukgnACguFEDiSZ7F9lq4=",
-      "OnlineTickets.Client.dll": "sha256-a95OP1HTDiB+bVRqzEcSFFwAeZmtQFlvKxDD5snssdI="
+      "OnlineTickets.Client.dll": "sha256-8mVgsocWialC4tm2Mi4oYH7Jqm86QXzMI73aY+EIvks="
     },
     "pdb": {
       "OnlineTickets.Shared.pdb": "sha256-RhAIQlEDgrLPunvicv5O5AlAXFkBi+CCVfUeBqfRX8k=",
-      "OnlineTickets.Client.pdb": "sha256-GyT91ZY4jN0XA5XQgtXJVE8Qjj8+6C5rtFkwZ9XdnWU="
+      "OnlineTickets.Client.pdb": "sha256-6MqbRH921ZRRyPkDKQhkTHHMke+WORLJmzDGykYOTGY="
     },
     "runtimeAssets": {
       "dotnet.wasm": {
